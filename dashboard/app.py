@@ -487,63 +487,36 @@ def render_portfolio_cards(pm, wl_count):
              "within 20% of target", "green")
 
 
-# --- Market Breadth + Portfolio Health ---
-def render_breadth_and_health(signals_df, pm):
+def render_portfolio_health(pm):
     st.markdown(
-        "<div class='section-title'>Market & Portfolio</div>",
+        "<div class='section-title'>Portfolio Health</div>",
         unsafe_allow_html=True
     )
 
-    col1, col2 = st.columns(2)
+    total_open = pm["open_count"]
 
-    # Market Breadth
+    col1, col2 = st.columns([1, 2])
     with col1:
-        regime, desc = compute_market_breadth(signals_df)
-        regime_class = {
-            "BULL":    "regime-bull",
-            "BEAR":    "regime-bear",
-            "NEUTRAL": "regime-neutral"
-        }.get(regime, "regime-neutral")
-
-        regime_text = regime or "—"
         st.markdown(f"""
         <div class="regime-panel">
-            <div class="card-label">Market Breadth</div>
-            <div class="{regime_class}">{regime_text}</div>
-            <div class="regime-desc">{desc}</div>
-            <br>
-            <div class="card-label" style="margin-top:8px;">
-                Why this reading?
-            </div>
-            <div class="regime-desc">
-                Based on number of Nifty 500 stocks currently
-                passing the weekly uptrend filter (close above
-                EMA20). Higher count = stronger market breadth.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Portfolio Health
-    with col2:
-        total_open = pm["open_count"]
-        st.markdown(f"""
-        <div class="regime-panel">
-            <div class="card-label">Portfolio Health</div>
+            <div class="card-label">Position Health</div>
             <br>
         """, unsafe_allow_html=True)
 
-        health_bar("Healthy",      pm["healthy"], total_open, "#00c853")
-        health_bar("Watch Closely", pm["watch"],  total_open, "#ffd600")
-        health_bar("At Risk",      pm["at_risk"], total_open, "#ff1744")
+        health_bar("Healthy",       pm["healthy"], total_open, "#00c853")
+        health_bar("Watch Closely", pm["watch"],   total_open, "#ffd600")
+        health_bar("At Risk",       pm["at_risk"], total_open, "#ff1744")
 
         st.markdown("""
             <div class="regime-desc" style="margin-top:12px;">
-                Healthy = SL within 2% · Watch = 2–5% ·
-                At Risk = SL more than 5% away from entry
+                Healthy = SL within 2% of entry ·
+                Watch = 2–5% · At Risk = more than 5%
             </div>
         </div>
         """, unsafe_allow_html=True)
 
+    with col2:
+        pass
 
 # --- Charts ---
 def render_charts(trades_df):
@@ -864,8 +837,8 @@ def main():
 
     st.markdown("---")
 
-    # Row 3: Breadth + Health
-    render_breadth_and_health(signals_df, pm)
+    # Row 3: Portfolio Health
+    render_portfolio_health(pm)
 
     st.markdown("---")
 
