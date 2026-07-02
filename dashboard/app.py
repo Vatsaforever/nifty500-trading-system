@@ -27,7 +27,134 @@ st.markdown("""
 
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
+        background-color: #0e1117;
     }
+
+    /* Metric Cards */
+    .card {
+        background: #1a1d2e;
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin: 4px 0;
+        border-left: 4px solid #444;
+        min-height: 90px;
+    }
+    .card-green  { border-left-color: #00c853; }
+    .card-red    { border-left-color: #ff1744; }
+    .card-blue   { border-left-color: #2979ff; }
+    .card-yellow { border-left-color: #ffd600; }
+    .card-orange { border-left-color: #ff6d00; }
+    .card-purple { border-left-color: #aa00ff; }
+    .card-teal   { border-left-color: #00bfa5; }
+
+    .card-icon {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+        opacity: 0.8;
+    }
+    .card-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #9e9e9e;
+        margin-bottom: 6px;
+    }
+    .card-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+    }
+    .card-sub {
+        font-size: 0.75rem;
+        color: #757575;
+        margin-top: 4px;
+    }
+    .card-value-green  { color: #00c853; }
+    .card-value-red    { color: #ff1744; }
+    .card-value-yellow { color: #ffd600; }
+    .card-value-orange { color: #ff6d00; }
+
+    /* Section Headers */
+    .section-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #616161;
+        margin: 24px 0 12px 0;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #1e2130;
+    }
+
+    /* Health Bar */
+    .health-row {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        gap: 12px;
+    }
+    .health-label {
+        font-size: 0.78rem;
+        color: #9e9e9e;
+        width: 100px;
+        flex-shrink: 0;
+    }
+    .health-bar-bg {
+        flex: 1;
+        background: #1e2130;
+        border-radius: 4px;
+        height: 6px;
+        overflow: hidden;
+    }
+    .health-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+    }
+    .health-count {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #ffffff;
+        width: 24px;
+        text-align: right;
+        flex-shrink: 0;
+    }
+
+    /* Regime Panel */
+    .regime-panel {
+        background: #1a1d2e;
+        border-radius: 12px;
+        padding: 20px;
+        height: 100%;
+    }
+    .regime-bull {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #00c853;
+        letter-spacing: 2px;
+    }
+    .regime-bear {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ff1744;
+        letter-spacing: 2px;
+    }
+    .regime-neutral {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ffd600;
+        letter-spacing: 2px;
+    }
+    .regime-desc {
+        font-size: 0.8rem;
+        color: #9e9e9e;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+
+    /* Streamlit overrides */
     .stMetric label {
         font-size: 0.78rem;
         color: #9e9e9e;
@@ -39,30 +166,49 @@ st.markdown("""
         font-size: 1.7rem;
         font-weight: 600;
     }
-    div[data-testid="stMetricDelta"] {
-        font-size: 0.82rem;
-    }
     h1 {
         font-weight: 700;
         letter-spacing: -0.5px;
+        font-size: 1.6rem !important;
     }
-    h2, h3 {
-        font-weight: 600;
-        letter-spacing: -0.3px;
-    }
-    .section-header {
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #9e9e9e;
-        margin-bottom: 0.5rem;
+    .stTabs [data-baseweb="tab"] {
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
     }
     div[data-testid="stDataFrame"] {
         border-radius: 8px;
     }
 </style>
 """, unsafe_allow_html=True)
+
+
+# --- Helpers ---
+def card(icon, label, value, sub="", color="blue", value_color=""):
+    vc = f"card-value-{value_color}" if value_color else "card-value"
+    st.markdown(f"""
+    <div class="card card-{color}">
+        <div class="card-icon">{icon}</div>
+        <div class="card-label">{label}</div>
+        <div class="{vc}">{value}</div>
+        <div class="card-sub">{sub}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+def health_bar(label, count, total, color):
+    pct = (count / total * 100) if total > 0 else 0
+    st.markdown(f"""
+    <div class="health-row">
+        <div class="health-label">{label}</div>
+        <div class="health-bar-bg">
+            <div class="health-bar-fill"
+                 style="width:{pct}%; background:{color};">
+            </div>
+        </div>
+        <div class="health-count">{count}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # --- Data Loading ---
@@ -73,7 +219,7 @@ def load_sheet(tab_name):
         records = ws.get_all_records()
         return pd.DataFrame(records)
     except Exception as e:
-        st.error(f"Error loading {tab_name} sheet: {e}")
+        st.error(f"Error loading {tab_name}: {e}")
         return pd.DataFrame()
 
 
@@ -83,15 +229,8 @@ def load_stats_raw():
         ws = get_sheet_client("Stats")
         return ws.get_all_values()
     except Exception as e:
-        st.error(f"Error loading Stats sheet: {e}")
+        st.error(f"Error loading Stats: {e}")
         return []
-
-
-def load_all_data():
-    signals = load_sheet("Signals")
-    trades  = load_sheet("Trades")
-    stats   = load_stats_raw()
-    return signals, trades, stats
 
 
 def parse_stats(stats_raw):
@@ -102,9 +241,127 @@ def parse_stats(stats_raw):
     return result
 
 
+def compute_portfolio_metrics(trades_df, capital):
+    """Computes live portfolio metrics from open trades."""
+    metrics = {
+        "open_count":        0,
+        "pending_count":     0,
+        "portfolio_heat":    0.0,
+        "capital_at_risk":   0.0,
+        "largest_position":  0.0,
+        "winning_capital":   0.0,
+        "losing_capital":    0.0,
+        "ema_alerts":        0,
+        "near_tp":           0,
+        "healthy":           0,
+        "watch":             0,
+        "at_risk":           0
+    }
+
+    if trades_df.empty or capital == 0:
+        return metrics
+
+    open_t = trades_df[trades_df["status"] == "OPEN"].copy()
+    pending = trades_df[trades_df["status"] == "PENDING"].copy()
+
+    metrics["open_count"]    = len(open_t)
+    metrics["pending_count"] = len(pending)
+
+    if open_t.empty:
+        return metrics
+
+    for _, t in open_t.iterrows():
+        try:
+            entry = float(t.get("actual_entry_price") or
+                          t.get("entry_price") or 0)
+            sl    = float(t.get("sl") or 0)
+            tp    = float(t.get("tp") or 0)
+            qty   = int(t.get("quantity") or 0)
+            risk  = (entry - sl) * qty
+
+            metrics["capital_at_risk"] += risk
+
+            position_value = entry * qty
+            if position_value > metrics["largest_position"]:
+                metrics["largest_position"] = position_value
+
+            if entry > sl:
+                metrics["winning_capital"] += position_value
+            else:
+                metrics["losing_capital"]  += position_value
+
+            if t.get("ema_exit_alert") == "TRUE":
+                metrics["ema_alerts"] += 1
+
+            # Distance to TP as % of range
+            if tp > entry > sl:
+                dist_to_tp = (tp - entry) / (tp - sl) * 100
+                if dist_to_tp <= 20:
+                    metrics["near_tp"] += 1
+
+            # Portfolio health classification
+            if entry > 0 and sl > 0:
+                sl_dist_pct = (entry - sl) / entry * 100
+                if sl_dist_pct > 5:
+                    metrics["at_risk"]  += 1
+                elif sl_dist_pct > 2:
+                    metrics["watch"]    += 1
+                else:
+                    metrics["healthy"]  += 1
+
+        except Exception:
+            continue
+
+    total_open = metrics["open_count"]
+    metrics["portfolio_heat"]   = round(
+        metrics["capital_at_risk"] / capital * 100, 1
+    ) if capital > 0 else 0
+    metrics["capital_at_risk"]  = round(
+        metrics["capital_at_risk"] / capital * 100, 1
+    )
+    metrics["largest_position"] = round(
+        metrics["largest_position"] / capital * 100, 1
+    ) if capital > 0 else 0
+    metrics["winning_capital"]  = round(
+        metrics["winning_capital"] /
+        (metrics["winning_capital"] + metrics["losing_capital"]) * 100, 1
+    ) if (metrics["winning_capital"] + metrics["losing_capital"]) > 0 else 0
+    metrics["losing_capital"]   = round(
+        100 - metrics["winning_capital"], 1
+    )
+
+    return metrics
+
+
+def compute_market_breadth(signals_df):
+    """
+    Estimates market breadth from the latest weekly scan —
+    what % of scanned symbols passed the weekly trend filter.
+    Uses WL count vs total scanned as a proxy.
+    """
+    if signals_df.empty:
+        return None, "No data"
+
+    wl_count = len(
+        signals_df[signals_df["event_type"] == "WL"]
+    )
+
+    # Breadth interpretation
+    if wl_count >= 50:
+        return "BULL", f"{wl_count} symbols in uptrend — broad participation"
+    elif wl_count >= 20:
+        return "NEUTRAL", f"{wl_count} symbols in uptrend — mixed market"
+    else:
+        return "BEAR", f"{wl_count} symbols in uptrend — weak breadth"
+
+
 # --- Sidebar ---
 def render_sidebar(stats_dict):
-    st.sidebar.markdown("## 📈 Trading System")
+    st.sidebar.markdown(
+        "<h2 style='font-size:1.1rem; font-weight:700; "
+        "letter-spacing:-0.3px;'>📈 Trading System</h2>",
+        unsafe_allow_html=True
+    )
     st.sidebar.markdown("---")
 
     capital = stats_dict.get("Trading Capital (₹)", "—")
@@ -113,35 +370,36 @@ def render_sidebar(stats_dict):
     st.sidebar.metric("Risk Per Trade",  f"₹{risk}")
 
     st.sidebar.markdown("---")
-
     status       = stats_dict.get("Status", "—")
     days_left    = stats_dict.get("Days Till Refresh", "—")
     next_refresh = stats_dict.get("Next Refresh Due", "—")
 
-    st.sidebar.markdown("### 🌐 Universe Status")
+    st.sidebar.markdown(
+        "<p class='card-label'>🌐 Universe Status</p>",
+        unsafe_allow_html=True
+    )
     st.sidebar.markdown(f"**Status**: {status}")
     st.sidebar.markdown(f"**Days Till Refresh**: {days_left}")
     st.sidebar.markdown(f"**Next Due**: {next_refresh}")
 
     st.sidebar.markdown("---")
     st.sidebar.caption(
-        f"Last updated: {datetime.now().strftime('%H:%M:%S')}"
+        f"Refreshes every 5 min · "
+        f"Last: {datetime.now().strftime('%H:%M:%S')}"
     )
-
-    if st.sidebar.button("🔄 Refresh Data"):
+    if st.sidebar.button("🔄 Refresh Now"):
         st.cache_data.clear()
         st.rerun()
 
 
-# --- Performance Metrics ---
-def render_metrics(trades_df):
-    st.markdown("## 📊 Performance")
+# --- Top Metric Cards Row 1: Performance ---
+def render_performance_cards(trades_df):
+    st.markdown(
+        "<div class='section-title'>Performance</div>",
+        unsafe_allow_html=True
+    )
 
     closed = trades_df[trades_df["status"] == "CLOSED"].copy() \
-        if not trades_df.empty else pd.DataFrame()
-    open_t = trades_df[trades_df["status"] == "OPEN"].copy() \
-        if not trades_df.empty else pd.DataFrame()
-    pending = trades_df[trades_df["status"] == "PENDING"].copy() \
         if not trades_df.empty else pd.DataFrame()
 
     total     = len(closed)
@@ -153,7 +411,6 @@ def render_metrics(trades_df):
         if not closed.empty else 0
     total_pnl = round(closed["pnl_rupees"].astype(float).sum(), 2) \
         if not closed.empty else 0
-
     gross_win  = closed[closed["pnl_rupees"].astype(float) > 0][
         "pnl_rupees"].astype(float).sum() \
         if not closed.empty else 0
@@ -162,107 +419,216 @@ def render_metrics(trades_df):
         if not closed.empty else 0
     pf = round(gross_win / gross_loss, 2) if gross_loss > 0 else 0
 
+    pnl_color = "green" if total_pnl >= 0 else "red"
+    r_color   = "green" if avg_r >= 0 else "red"
+
+    c1, c2, c3, c4, c5 = st.columns(5)
+    with c1:
+        card("📊", "Total Trades", total,
+             f"{wins}W / {losses}L", "blue")
+    with c2:
+        card("🎯", "Win Rate", f"{win_rate}%",
+             "closed trades", "green")
+    with c3:
+        card("📐", "Avg R", avg_r,
+             "per trade", "teal",
+             value_color=r_color)
+    with c4:
+        card("⚖️", "Profit Factor", pf,
+             "gross profit / loss", "purple")
+    with c5:
+        card("💰", "Total P&L",
+             f"₹{total_pnl:,.0f}",
+             "all closed trades", "green",
+             value_color=pnl_color)
+
+
+# --- Top Metric Cards Row 2: Portfolio ---
+def render_portfolio_cards(pm, wl_count):
+    st.markdown(
+        "<div class='section-title'>Portfolio</div>",
+        unsafe_allow_html=True
+    )
+
+    heat_color = (
+        "red"    if pm["portfolio_heat"] > 10 else
+        "yellow" if pm["portfolio_heat"] > 5  else
+        "green"
+    )
     c1, c2, c3, c4, c5, c6, c7 = st.columns(7)
     with c1:
-        st.metric("Total Trades", total)
+        card("📂", "Holdings",
+             pm["open_count"],
+             "active positions", "blue")
     with c2:
-        st.metric("Win Rate", f"{win_rate}%", f"{wins}W / {losses}L")
+        card("🔍", "Watch List",
+             wl_count,
+             "monitor closely", "teal")
     with c3:
-        st.metric("Avg R", avg_r)
+        card("⏳", "Pending",
+             pm["pending_count"],
+             "awaiting fill", "yellow")
     with c4:
-        st.metric("Profit Factor", pf)
+        card("🌡️", "Portfolio Heat",
+             f"{pm['portfolio_heat']}%",
+             "total risk / capital",
+             heat_color, value_color=heat_color)
     with c5:
-        st.metric("Total P&L", f"₹{total_pnl:,.0f}")
+        card("🎯", "Capital at Risk",
+             f"{pm['capital_at_risk']}%",
+             "exit/prepare positions", "orange")
     with c6:
-        st.metric("Open Trades", len(open_t))
+        card("⚠️", "EMA Alerts",
+             pm["ema_alerts"],
+             "consider exiting", "red")
     with c7:
-        st.metric("Pending", len(pending))
+        card("🏁", "Near TP",
+             pm["near_tp"],
+             "within 20% of target", "green")
 
 
-# --- Equity Curve (Drilldown Expander) ---
-def render_equity_curve(trades_df):
-    with st.expander("📈 Equity Curve", expanded=True):
-        closed = trades_df[trades_df["status"] == "CLOSED"].copy() \
-            if not trades_df.empty else pd.DataFrame()
+# --- Market Breadth + Portfolio Health ---
+def render_breadth_and_health(signals_df, pm):
+    st.markdown(
+        "<div class='section-title'>Market & Portfolio</div>",
+        unsafe_allow_html=True
+    )
 
-        if closed.empty:
-            st.info("No closed trades yet — equity curve will "
-                    "appear here once trades are completed.")
-            return
+    col1, col2 = st.columns(2)
 
-        closed["pnl_rupees"] = closed["pnl_rupees"].astype(float)
-        closed = closed.sort_values("exit_time")
-        closed["cumulative_pnl"] = closed["pnl_rupees"].cumsum()
+    # Market Breadth
+    with col1:
+        regime, desc = compute_market_breadth(signals_df)
+        regime_class = {
+            "BULL":    "regime-bull",
+            "BEAR":    "regime-bear",
+            "NEUTRAL": "regime-neutral"
+        }.get(regime, "regime-neutral")
 
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(
-            x=closed["exit_time"],
-            y=closed["cumulative_pnl"],
-            mode="lines+markers",
-            line=dict(color="#00c853", width=2),
-            fill="tozeroy",
-            fillcolor="rgba(0, 200, 83, 0.1)",
-            name="Cumulative P&L",
-            hovertemplate="<b>%{x}</b><br>P&L: ₹%{y:,.0f}<extra></extra>"
-        ))
-        fig.update_layout(
-            template="plotly_dark",
-            height=320,
-            margin=dict(l=0, r=0, t=10, b=0),
-            xaxis_title="Exit Date",
-            yaxis_title="Cumulative P&L (₹)",
-            showlegend=False,
-            font=dict(family="Inter")
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        regime_text = regime or "—"
+        st.markdown(f"""
+        <div class="regime-panel">
+            <div class="card-label">Market Breadth</div>
+            <div class="{regime_class}">{regime_text}</div>
+            <div class="regime-desc">{desc}</div>
+            <br>
+            <div class="card-label" style="margin-top:8px;">
+                Why this reading?
+            </div>
+            <div class="regime-desc">
+                Based on number of Nifty 500 stocks currently
+                passing the weekly uptrend filter (close above
+                EMA20). Higher count = stronger market breadth.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
+    # Portfolio Health
+    with col2:
+        total_open = pm["open_count"]
+        st.markdown(f"""
+        <div class="regime-panel">
+            <div class="card-label">Portfolio Health</div>
+            <br>
+        """, unsafe_allow_html=True)
 
-# --- R Distribution (Drilldown Expander) ---
-def render_r_distribution(trades_df):
-    with st.expander("📊 R Distribution", expanded=True):
-        closed = trades_df[trades_df["status"] == "CLOSED"].copy() \
-            if not trades_df.empty else pd.DataFrame()
+        health_bar("Healthy",      pm["healthy"], total_open, "#00c853")
+        health_bar("Watch Closely", pm["watch"],  total_open, "#ffd600")
+        health_bar("At Risk",      pm["at_risk"], total_open, "#ff1744")
 
-        if closed.empty:
-            st.info("No closed trades yet.")
-            return
-
-        closed["r_multiple"] = closed["r_multiple"].astype(float)
-
-        fig = px.histogram(
-            closed,
-            x="r_multiple",
-            nbins=20,
-            color_discrete_sequence=["#448aff"],
-            template="plotly_dark",
-            labels={"r_multiple": "R Multiple"}
-        )
-        fig.add_vline(
-            x=0, line_color="#ff1744",
-            line_dash="dash",
-            annotation_text="Break Even",
-            annotation_position="top right"
-        )
-        fig.add_vline(
-            x=1.5, line_color="#00c853",
-            line_dash="dash",
-            annotation_text="TP (1.5R)",
-            annotation_position="top right"
-        )
-        fig.update_layout(
-            height=320,
-            margin=dict(l=0, r=0, t=10, b=0),
-            xaxis_title="R Multiple",
-            yaxis_title="Number of Trades",
-            showlegend=False,
-            font=dict(family="Inter")
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        st.markdown("""
+            <div class="regime-desc" style="margin-top:12px;">
+                Healthy = SL within 2% · Watch = 2–5% ·
+                At Risk = SL more than 5% away from entry
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
 
-# --- Open / Pending Trades ---
-def render_open_trades(trades_df):
-    st.markdown("## 📂 Active Trades")
+# --- Charts ---
+def render_charts(trades_df):
+    col1, col2 = st.columns(2)
+
+    with col1:
+        with st.expander("📈 Equity Curve", expanded=True):
+            closed = trades_df[trades_df["status"] == "CLOSED"].copy() \
+                if not trades_df.empty else pd.DataFrame()
+            if closed.empty:
+                st.info("No closed trades yet.")
+            else:
+                closed["pnl_rupees"] = closed["pnl_rupees"].astype(float)
+                closed = closed.sort_values("exit_time")
+                closed["cumulative_pnl"] = \
+                    closed["pnl_rupees"].cumsum()
+                fig = go.Figure()
+                fig.add_trace(go.Scatter(
+                    x=closed["exit_time"],
+                    y=closed["cumulative_pnl"],
+                    mode="lines+markers",
+                    line=dict(color="#00c853", width=2),
+                    fill="tozeroy",
+                    fillcolor="rgba(0,200,83,0.08)",
+                    hovertemplate=(
+                        "<b>%{x}</b><br>"
+                        "P&L: ₹%{y:,.0f}<extra></extra>"
+                    )
+                ))
+                fig.update_layout(
+                    template="plotly_dark",
+                    height=280,
+                    margin=dict(l=0, r=0, t=10, b=0),
+                    xaxis_title="Exit Date",
+                    yaxis_title="Cumulative P&L (₹)",
+                    showlegend=False,
+                    font=dict(family="Inter"),
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(0,0,0,0)"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+    with col2:
+        with st.expander("📊 R Distribution", expanded=True):
+            closed = trades_df[trades_df["status"] == "CLOSED"].copy() \
+                if not trades_df.empty else pd.DataFrame()
+            if closed.empty:
+                st.info("No closed trades yet.")
+            else:
+                closed["r_multiple"] = \
+                    closed["r_multiple"].astype(float)
+                fig = px.histogram(
+                    closed, x="r_multiple", nbins=20,
+                    color_discrete_sequence=["#2979ff"],
+                    template="plotly_dark"
+                )
+                fig.add_vline(
+                    x=0, line_color="#ff1744",
+                    line_dash="dash",
+                    annotation_text="Break Even"
+                )
+                fig.add_vline(
+                    x=1.5, line_color="#00c853",
+                    line_dash="dash",
+                    annotation_text="TP 1.5R"
+                )
+                fig.update_layout(
+                    height=280,
+                    margin=dict(l=0, r=0, t=10, b=0),
+                    xaxis_title="R Multiple",
+                    yaxis_title="Trades",
+                    showlegend=False,
+                    font=dict(family="Inter"),
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(0,0,0,0)"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+
+# --- Active Trades ---
+def render_active_trades(trades_df):
+    st.markdown(
+        "<div class='section-title'>Active Trades</div>",
+        unsafe_allow_html=True
+    )
 
     open_t  = trades_df[trades_df["status"] == "OPEN"].copy() \
         if not trades_df.empty else pd.DataFrame()
@@ -270,70 +636,76 @@ def render_open_trades(trades_df):
         if not trades_df.empty else pd.DataFrame()
 
     if open_t.empty and pending.empty:
-        st.info("No active or pending trades at the moment.")
+        st.info("No active or pending trades.")
         return
 
     OPEN_COLS = {
-        "symbol":               "Symbol",
-        "sector":               "Sector",
-        "entry_time":           "Entry Time",
-        "entry_price":          "Entry Price (₹)",
-        "actual_entry_price":   "Actual Fill (₹)",
-        "sl":                   "Stop Loss (₹)",
-        "tp":                   "Take Profit (₹)",
-        "quantity":             "Qty",
-        "risk_amount":          "Risk (₹)",
-        "ema_exit_alert":       "EMA Alert"
+        "symbol":             "Symbol",
+        "company_name":       "Company",
+        "sector":             "Sector",
+        "entry_time":         "Entry Time",
+        "entry_price":        "Entry (₹)",
+        "actual_entry_price": "Fill (₹)",
+        "sl":                 "SL (₹)",
+        "tp":                 "TP (₹)",
+        "quantity":           "Qty",
+        "risk_amount":        "Risk (₹)",
+        "ema_exit_alert":     "EMA ⚠️"
     }
 
     PENDING_COLS = {
         "symbol":       "Symbol",
+        "company_name": "Company",
         "sector":       "Sector",
         "entry_time":   "Signal Time",
-        "entry_price":  "Entry Price (₹)",
-        "sl":           "Stop Loss (₹)",
-        "tp":           "Take Profit (₹)",
+        "entry_price":  "Entry (₹)",
+        "sl":           "SL (₹)",
+        "tp":           "TP (₹)",
         "quantity":     "Qty",
         "risk_amount":  "Risk (₹)"
     }
 
     if not open_t.empty:
-        st.markdown("#### ✅ Confirmed Open")
-        cols = [c for c in OPEN_COLS if c in open_t.columns]
+        st.markdown(
+            "<p style='font-size:0.78rem; font-weight:600; "
+            "color:#00c853;'>● CONFIRMED OPEN</p>",
+            unsafe_allow_html=True
+        )
+        cols    = [c for c in OPEN_COLS if c in open_t.columns]
         display = open_t[cols].rename(
             columns={c: OPEN_COLS[c] for c in cols}
         ).reset_index(drop=True)
-        st.dataframe(display, use_container_width=True, hide_index=True)
+        st.dataframe(display, use_container_width=True,
+                     hide_index=True)
 
     if not pending.empty:
         st.markdown(
-            "#### ⏳ Pending "
-            "<span style='font-size:0.78rem; color:#9e9e9e;'>"
-            "Place a CNC SL-M order in Zerodha at the entry price</span>",
+            "<p style='font-size:0.78rem; font-weight:600; "
+            "color:#ffd600;'>● PENDING "
+            "<span style='font-weight:400; color:#757575;'>"
+            "— Place CNC SL-M order in Zerodha</span></p>",
             unsafe_allow_html=True
         )
-        cols = [c for c in PENDING_COLS if c in pending.columns]
+        cols    = [c for c in PENDING_COLS if c in pending.columns]
         display = pending[cols].rename(
             columns={c: PENDING_COLS[c] for c in cols}
         ).reset_index(drop=True)
-        st.dataframe(display, use_container_width=True, hide_index=True)
+        st.dataframe(display, use_container_width=True,
+                     hide_index=True)
 
 
-# --- Signals / Watchlist ---
+# --- Signals ---
 def render_signals(signals_df):
-    if signals_df.empty:
-        st.info("No signals yet — run the weekly scan to populate.")
-        return
+    wl_df    = signals_df[
+        signals_df["event_type"] == "WL"
+    ].copy() if not signals_df.empty else pd.DataFrame()
 
-    # Separate WL from entry signals
-    wl_df     = signals_df[signals_df["event_type"] == "WL"].copy()
-    entry_df  = signals_df[
+    entry_df = signals_df[
         signals_df["event_type"].isin(
             ["ENTRY_INITIAL", "ENTRY_UPDATED"]
         )
-    ].copy()
+    ].copy() if not signals_df.empty else pd.DataFrame()
 
-    # --- Watchlist ---
     with st.expander("🔍 Watchlist (WL)", expanded=True):
         if wl_df.empty:
             st.info("No watchlist symbols yet.")
@@ -342,7 +714,7 @@ def render_signals(signals_df):
                 "timestamp":          "Timestamp",
                 "event_type":         "Event Type",
                 "symbol":             "Symbol",
-                 "company_name":       "Company",
+                "company_name":       "Company",
                 "sector":             "Sector",
                 "rsi5":               "RSI (5)",
                 "support_zone_price": "Support Zone (₹)"
@@ -354,22 +726,18 @@ def render_signals(signals_df):
                 "Timestamp", ascending=False
             ).reset_index(drop=True)
 
-            # Symbol filter
-            sym_filter = st.text_input(
-                "Filter by Symbol", "", key="wl_filter"
+            sym = st.text_input(
+                "Filter by Symbol", "", key="wl_sym"
             )
-            if sym_filter:
+            if sym:
                 display = display[
                     display["Symbol"].str.contains(
-                        sym_filter.upper(), na=False
+                        sym.upper(), na=False
                     )
                 ]
-            st.dataframe(
-                display, use_container_width=True,
-                hide_index=True
-            )
+            st.dataframe(display, use_container_width=True,
+                         hide_index=True)
 
-    # --- Entry Signals ---
     with st.expander("📋 Entry Signals", expanded=False):
         if entry_df.empty:
             st.info("No entry signals yet.")
@@ -378,23 +746,23 @@ def render_signals(signals_df):
                 "timestamp":   "Timestamp",
                 "event_type":  "Event Type",
                 "symbol":      "Symbol",
+                "company_name": "Company",
                 "sector":      "Sector",
                 "entry":       "Entry (₹)",
-                "sl":          "Stop Loss (₹)",
-                "tp":          "Take Profit (₹)",
+                "sl":          "SL (₹)",
+                "tp":          "TP (₹)",
                 "quantity":    "Qty",
                 "atr":         "ATR"
             }
-            cols    = [c for c in ENTRY_COLS if c in entry_df.columns]
+            cols    = [c for c in ENTRY_COLS
+                       if c in entry_df.columns]
             display = entry_df[cols].rename(
                 columns={c: ENTRY_COLS[c] for c in cols}
             ).sort_values(
                 "Timestamp", ascending=False
             ).reset_index(drop=True)
-            st.dataframe(
-                display, use_container_width=True,
-                hide_index=True
-            )
+            st.dataframe(display, use_container_width=True,
+                         hide_index=True)
 
 
 # --- Trade History ---
@@ -406,31 +774,30 @@ def render_trade_history(trades_df):
         st.info("No closed trades yet.")
         return
 
-    closed["pnl_rupees"]  = closed["pnl_rupees"].astype(float)
-    closed["r_multiple"]  = closed["r_multiple"].astype(float)
+    closed["pnl_rupees"] = closed["pnl_rupees"].astype(float)
+    closed["r_multiple"] = closed["r_multiple"].astype(float)
 
     HISTORY_COLS = {
-        "symbol":               "Symbol",
-        "sector":               "Sector",
-        "entry_time":           "Entry Time",
-        "actual_entry_price":   "Fill Price (₹)",
-        "sl":                   "Stop Loss (₹)",
-        "tp":                   "Take Profit (₹)",
-        "quantity":             "Qty",
-        "exit_time":            "Exit Time",
-        "exit_price":           "Exit Price (₹)",
-        "exit_reason":          "Result",
-        "pnl_rupees":           "P&L (₹)",
-        "r_multiple":           "R",
-        "holding_period":       "Held"
+        "symbol":             "Symbol",
+        "company_name":       "Company",
+        "sector":             "Sector",
+        "entry_time":         "Entry",
+        "actual_entry_price": "Fill (₹)",
+        "sl":                 "SL (₹)",
+        "tp":                 "TP (₹)",
+        "quantity":           "Qty",
+        "exit_time":          "Exit",
+        "exit_price":         "Exit (₹)",
+        "exit_reason":        "Result",
+        "pnl_rupees":         "P&L (₹)",
+        "r_multiple":         "R",
+        "holding_period":     "Held"
     }
 
     cols    = [c for c in HISTORY_COLS if c in closed.columns]
     display = closed[cols].rename(
         columns={c: HISTORY_COLS[c] for c in cols}
-    ).sort_values(
-        "Exit Time", ascending=False
-    ).reset_index(drop=True)
+    ).sort_values("Exit", ascending=False).reset_index(drop=True)
 
     def color_pnl(val):
         try:
@@ -443,41 +810,80 @@ def render_trade_history(trades_df):
     styled = display.style.map(
         color_pnl, subset=["P&L (₹)", "R"]
     )
-    st.dataframe(
-        styled, use_container_width=True,
-        hide_index=True, height=400
-    )
+    st.dataframe(styled, use_container_width=True,
+                 hide_index=True, height=400)
 
 
 # --- Main ---
 def main():
-    signals_df, trades_df, stats_raw = load_all_data()
+    signals_df, trades_df, stats_raw = (
+        load_sheet("Signals"),
+        load_sheet("Trades"),
+        load_stats_raw()
+    )
     stats_dict = parse_stats(stats_raw)
+
+    # Capital
+    try:
+        capital = float(
+            str(stats_dict.get(
+                "Trading Capital (₹)", "0"
+            )).replace(",", "")
+        )
+    except Exception:
+        capital = 0
+
+    # Portfolio metrics
+    pm = compute_portfolio_metrics(trades_df, capital)
+
+    # WL count
+    wl_count = len(
+        signals_df[signals_df["event_type"] == "WL"]
+    ) if not signals_df.empty else 0
 
     render_sidebar(stats_dict)
 
-    st.title("📈 Nifty 500 Trading Dashboard")
+    # Header
+    st.markdown(
+        "<h1>📈 Nifty 500 · Trading Dashboard</h1>",
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        "<p style='color:#616161; font-size:0.82rem; "
+        "margin-top:-12px;'>Scanner intelligence and "
+        "holding action dashboard</p>",
+        unsafe_allow_html=True
+    )
     st.markdown("---")
 
-    # Performance metrics
-    render_metrics(trades_df)
-    st.markdown("---")
+    # Row 1: Performance cards
+    render_performance_cards(trades_df)
 
-    # Charts side by side as drilldown expanders
-    col1, col2 = st.columns(2)
-    with col1:
-        render_equity_curve(trades_df)
-    with col2:
-        render_r_distribution(trades_df)
+    # Row 2: Portfolio cards
+    render_portfolio_cards(pm, wl_count)
 
     st.markdown("---")
 
-    # Active trades
-    render_open_trades(trades_df)
+    # Row 3: Breadth + Health
+    render_breadth_and_health(signals_df, pm)
+
     st.markdown("---")
 
-    # Tabs
-    tab1, tab2 = st.tabs(["📋 Signals & Watchlist", "📜 Trade History"])
+    # Row 4: Charts
+    render_charts(trades_df)
+
+    st.markdown("---")
+
+    # Row 5: Active trades
+    render_active_trades(trades_df)
+
+    st.markdown("---")
+
+    # Row 6: Tabs
+    tab1, tab2 = st.tabs([
+        "📋 Signals & Watchlist",
+        "📜 Trade History"
+    ])
     with tab1:
         render_signals(signals_df)
     with tab2:
