@@ -1,7 +1,7 @@
-streamlit==1.45.1
-plotly==6.1.2
-pandas==2.2.3
-numpy==2.2.6
-gspread==6.1.4
-google-auth==2.40.3
-python-dotenv==1.1.0
+streamlit
+plotly
+pandas
+numpy
+gspread
+google-auth
+python-dotenv
