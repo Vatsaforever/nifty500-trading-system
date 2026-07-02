@@ -36,6 +36,11 @@ def run_weekly_scan():
     symbols      = active["symbol"].tolist()
     sector_map   = active.set_index("symbol")["sector"].to_dict()
 
+    # Load company names from instrument map
+    from scripts.utils.config import INSTRUMENT_MAP_FILE
+    imap_df      = pd.read_csv(INSTRUMENT_MAP_FILE)
+    company_map  = imap_df.set_index("symbol")["company_name"].to_dict()
+
     print(f"Universe: {len(symbols)} active symbols\n")
 
     # Load Kite client and instrument map
@@ -75,13 +80,14 @@ def run_weekly_scan():
 
             # Build WL event
             wl_event = {
-                "event_type":        "WL",
-                "symbol":            symbol,
-                "weekly_close":      weekly_details.get("weekly_close"),
-                "weekly_ema20":      weekly_details.get("weekly_ema20"),
-                "rsi5":              daily_details.get("rsi5"),
+                "event_type":         "WL",
+                "symbol":             symbol,
+                "company_name":       company_map.get(symbol, ""),
+                "weekly_close":       weekly_details.get("weekly_close"),
+                "weekly_ema20":       weekly_details.get("weekly_ema20"),
+                "rsi5":               daily_details.get("rsi5"),
                 "support_zone_price": daily_details.get("support_zone_price"),
-                "notes":             ""
+                "notes":              ""
             }
 
             # Log to Signals sheet

@@ -342,6 +342,7 @@ def render_signals(signals_df):
                 "timestamp":          "Timestamp",
                 "event_type":         "Event Type",
                 "symbol":             "Symbol",
+                 "company_name":       "Company",
                 "sector":             "Sector",
                 "rsi5":               "RSI (5)",
                 "support_zone_price": "Support Zone (₹)"

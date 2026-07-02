@@ -84,7 +84,7 @@ def get_risk_amount():
 # ---------------------------------------------------------------------------
 
 SIGNALS_HEADERS = [
-    "timestamp", "event_type", "symbol", "sector",
+    "timestamp", "event_type", "symbol", "company_name", "sector",
     "weekly_close", "weekly_ema20", "rsi5", "support_zone_price",
     "signal_high", "signal_low", "atr",
     "entry", "sl", "tp", "quantity", "notes"
@@ -172,6 +172,7 @@ def write_signal_event(event_dict, sector=""):
         now,
         et,
         event_dict.get("symbol", ""),
+        event_dict.get("company_name", ""),
         sector,
         event_dict.get("weekly_close", ""),
         event_dict.get("weekly_ema20", ""),
