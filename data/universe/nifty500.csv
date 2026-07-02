@@ -1,0 +1,501 @@
+symbol,yf_symbol,exchange,sector,notes,active
+360ONE,360ONE.NS,NSE,Financial Services,,True
+3MINDIA,3MINDIA.NS,NSE,Diversified,,True
+ABB,ABB.NS,NSE,Capital Goods,,True
+ACC,ACC.NS,NSE,Construction Materials,,True
+ACMESOLAR,ACMESOLAR.NS,NSE,Power,,True
+AIAENG,AIAENG.NS,NSE,Capital Goods,,True
+APLAPOLLO,APLAPOLLO.NS,NSE,Capital Goods,,True
+AUBANK,AUBANK.NS,NSE,Financial Services,,True
+AWL,AWL.NS,NSE,Fast Moving Consumer Goods,,True
+AADHARHFC,AADHARHFC.NS,NSE,Financial Services,,True
+AARTIIND,AARTIIND.NS,NSE,Chemicals,,True
+AAVAS,AAVAS.NS,NSE,Financial Services,,True
+ABBOTINDIA,ABBOTINDIA.NS,NSE,Healthcare,,True
+ACE,ACE.NS,NSE,Capital Goods,,True
+ACUTAAS,ACUTAAS.NS,NSE,Healthcare,,True
+ADANIENSOL,ADANIENSOL.NS,NSE,Power,,True
+ADANIENT,ADANIENT.NS,NSE,Metals & Mining,,True
+ADANIGREEN,ADANIGREEN.NS,NSE,Power,,True
+ADANIPORTS,ADANIPORTS.NS,NSE,Services,,True
+ADANIPOWER,ADANIPOWER.NS,NSE,Power,,True
+ATGL,ATGL.NS,NSE,Oil Gas & Consumable Fuels,,True
+ABCAPITAL,ABCAPITAL.NS,NSE,Financial Services,,True
+ABFRL,ABFRL.NS,NSE,Consumer Services,,True
+ABLBL,ABLBL.NS,NSE,Consumer Services,,True
+ABREL,ABREL.NS,NSE,Realty,,True
+ABSLAMC,ABSLAMC.NS,NSE,Financial Services,,True
+CPPLUS,CPPLUS.NS,NSE,Capital Goods,,True
+AEGISLOG,AEGISLOG.NS,NSE,Oil Gas & Consumable Fuels,,True
+AEGISVOPAK,AEGISVOPAK.NS,NSE,Oil Gas & Consumable Fuels,,True
+AFCONS,AFCONS.NS,NSE,Construction,,True
+AFFLE,AFFLE.NS,NSE,Information Technology,,True
+AJANTPHARM,AJANTPHARM.NS,NSE,Healthcare,,True
+ALKEM,ALKEM.NS,NSE,Healthcare,,True
+ABDL,ABDL.NS,NSE,Fast Moving Consumer Goods,,True
+ARE&M,ARE&M.NS,NSE,Automobile and Auto Components,,True
+AMBER,AMBER.NS,NSE,Consumer Durables,,True
+AMBUJACEM,AMBUJACEM.NS,NSE,Construction Materials,,True
+ANANDRATHI,ANANDRATHI.NS,NSE,Financial Services,,True
+ANANTRAJ,ANANTRAJ.NS,NSE,Realty,,True
+ANGELONE,ANGELONE.NS,NSE,Financial Services,,True
+ANTHEM,ANTHEM.NS,NSE,Healthcare,,True
+ANURAS,ANURAS.NS,NSE,Chemicals,,True
+APARINDS,APARINDS.NS,NSE,Capital Goods,,True
+APOLLOHOSP,APOLLOHOSP.NS,NSE,Healthcare,,True
+APOLLOTYRE,APOLLOTYRE.NS,NSE,Automobile and Auto Components,,True
+APTUS,APTUS.NS,NSE,Financial Services,,True
+ASAHIINDIA,ASAHIINDIA.NS,NSE,Automobile and Auto Components,,True
+ASHOKLEY,ASHOKLEY.NS,NSE,Capital Goods,,True
+ASIANPAINT,ASIANPAINT.NS,NSE,Consumer Durables,,True
+ASTERDM,ASTERDM.NS,NSE,Healthcare,,True
+ASTRAL,ASTRAL.NS,NSE,Capital Goods,,True
+ATHERENERG,ATHERENERG.NS,NSE,Automobile and Auto Components,,True
+ATUL,ATUL.NS,NSE,Chemicals,,True
+AUROPHARMA,AUROPHARMA.NS,NSE,Healthcare,,True
+AIIL,AIIL.NS,NSE,Financial Services,,True
+DMART,DMART.NS,NSE,Consumer Services,,True
+AXISBANK,AXISBANK.NS,NSE,Financial Services,,True
+BEML,BEML.NS,NSE,Capital Goods,,True
+BLS,BLS.NS,NSE,Consumer Services,,True
+BSE,BSE.NS,NSE,Financial Services,,True
+BAJAJ-AUTO,BAJAJ-AUTO.NS,NSE,Automobile and Auto Components,,True
+BAJFINANCE,BAJFINANCE.NS,NSE,Financial Services,,True
+BAJAJFINSV,BAJAJFINSV.NS,NSE,Financial Services,,True
+BAJAJHLDNG,BAJAJHLDNG.NS,NSE,Financial Services,,True
+BAJAJHFL,BAJAJHFL.NS,NSE,Financial Services,,True
+BALKRISIND,BALKRISIND.NS,NSE,Automobile and Auto Components,,True
+BALRAMCHIN,BALRAMCHIN.NS,NSE,Fast Moving Consumer Goods,,True
+BANDHANBNK,BANDHANBNK.NS,NSE,Financial Services,,True
+BANKBARODA,BANKBARODA.NS,NSE,Financial Services,,True
+BANKINDIA,BANKINDIA.NS,NSE,Financial Services,,True
+MAHABANK,MAHABANK.NS,NSE,Financial Services,,True
+BATAINDIA,BATAINDIA.NS,NSE,Consumer Durables,,True
+BAYERCROP,BAYERCROP.NS,NSE,Chemicals,,True
+BELRISE,BELRISE.NS,NSE,Automobile and Auto Components,,True
+BERGEPAINT,BERGEPAINT.NS,NSE,Consumer Durables,,True
+BDL,BDL.NS,NSE,Capital Goods,,True
+BEL,BEL.NS,NSE,Capital Goods,,True
+BHARATFORG,BHARATFORG.NS,NSE,Automobile and Auto Components,,True
+BHEL,BHEL.NS,NSE,Capital Goods,,True
+BPCL,BPCL.NS,NSE,Oil Gas & Consumable Fuels,,True
+BHARTIARTL,BHARTIARTL.NS,NSE,Telecommunication,,True
+BHARTIHEXA,BHARTIHEXA.NS,NSE,Telecommunication,,True
+BIKAJI,BIKAJI.NS,NSE,Fast Moving Consumer Goods,,True
+GROWW,GROWW.NS,NSE,Financial Services,,True
+BIOCON,BIOCON.NS,NSE,Healthcare,,True
+BSOFT,BSOFT.NS,NSE,Information Technology,,True
+BLUEDART,BLUEDART.NS,NSE,Services,,True
+BLUEJET,BLUEJET.NS,NSE,Healthcare,,True
+BLUESTARCO,BLUESTARCO.NS,NSE,Consumer Durables,,True
+BBTC,BBTC.NS,NSE,Fast Moving Consumer Goods,,True
+BOSCHLTD,BOSCHLTD.NS,NSE,Automobile and Auto Components,,True
+FIRSTCRY,FIRSTCRY.NS,NSE,Consumer Services,,True
+BRIGADE,BRIGADE.NS,NSE,Realty,,True
+BRITANNIA,BRITANNIA.NS,NSE,Fast Moving Consumer Goods,,True
+MAPMYINDIA,MAPMYINDIA.NS,NSE,Information Technology,,True
+CCL,CCL.NS,NSE,Fast Moving Consumer Goods,,True
+CESC,CESC.NS,NSE,Power,,True
+CGPOWER,CGPOWER.NS,NSE,Capital Goods,,True
+CIEINDIA,CIEINDIA.NS,NSE,Automobile and Auto Components,,True
+CRISIL,CRISIL.NS,NSE,Financial Services,,True
+CANFINHOME,CANFINHOME.NS,NSE,Financial Services,,True
+CANBK,CANBK.NS,NSE,Financial Services,,True
+CANHLIFE,CANHLIFE.NS,NSE,Financial Services,,True
+CAPLIPOINT,CAPLIPOINT.NS,NSE,Healthcare,,True
+CGCL,CGCL.NS,NSE,Financial Services,,True
+CARBORUNIV,CARBORUNIV.NS,NSE,Capital Goods,,True
+CARTRADE,CARTRADE.NS,NSE,Consumer Services,,True
+CASTROLIND,CASTROLIND.NS,NSE,Oil Gas & Consumable Fuels,,True
+CEATLTD,CEATLTD.NS,NSE,Automobile and Auto Components,,True
+CEMPRO,CEMPRO.NS,NSE,Construction,,True
+CENTRALBK,CENTRALBK.NS,NSE,Financial Services,,True
+CDSL,CDSL.NS,NSE,Financial Services,,True
+CHALET,CHALET.NS,NSE,Consumer Services,,True
+CHAMBLFERT,CHAMBLFERT.NS,NSE,Chemicals,,True
+CHENNPETRO,CHENNPETRO.NS,NSE,Oil Gas & Consumable Fuels,,True
+CHOICEIN,CHOICEIN.NS,NSE,Financial Services,,True
+CHOLAHLDNG,CHOLAHLDNG.NS,NSE,Financial Services,,True
+CHOLAFIN,CHOLAFIN.NS,NSE,Financial Services,,True
+CIPLA,CIPLA.NS,NSE,Healthcare,,True
+CUB,CUB.NS,NSE,Financial Services,,True
+CLEAN,CLEAN.NS,NSE,Chemicals,,True
+COALINDIA,COALINDIA.NS,NSE,Oil Gas & Consumable Fuels,,True
+COCHINSHIP,COCHINSHIP.NS,NSE,Capital Goods,,True
+COFORGE,COFORGE.NS,NSE,Information Technology,,True
+COHANCE,COHANCE.NS,NSE,Healthcare,,True
+COLPAL,COLPAL.NS,NSE,Fast Moving Consumer Goods,,True
+CAMS,CAMS.NS,NSE,Financial Services,,True
+CONCORDBIO,CONCORDBIO.NS,NSE,Healthcare,,True
+CONCOR,CONCOR.NS,NSE,Services,,True
+COROMANDEL,COROMANDEL.NS,NSE,Chemicals,,True
+CRAFTSMAN,CRAFTSMAN.NS,NSE,Automobile and Auto Components,,True
+CREDITACC,CREDITACC.NS,NSE,Financial Services,,True
+CROMPTON,CROMPTON.NS,NSE,Consumer Durables,,True
+CUMMINSIND,CUMMINSIND.NS,NSE,Capital Goods,,True
+CYIENT,CYIENT.NS,NSE,Information Technology,,True
+DCMSHRIRAM,DCMSHRIRAM.NS,NSE,Diversified,,True
+DLF,DLF.NS,NSE,Realty,,True
+DOMS,DOMS.NS,NSE,Fast Moving Consumer Goods,,True
+DABUR,DABUR.NS,NSE,Fast Moving Consumer Goods,,True
+DALBHARAT,DALBHARAT.NS,NSE,Construction Materials,,True
+DATAPATTNS,DATAPATTNS.NS,NSE,Capital Goods,,True
+DEEPAKFERT,DEEPAKFERT.NS,NSE,Chemicals,,True
+DEEPAKNTR,DEEPAKNTR.NS,NSE,Chemicals,,True
+DELHIVERY,DELHIVERY.NS,NSE,Services,,True
+DEVYANI,DEVYANI.NS,NSE,Consumer Services,,True
+DIVISLAB,DIVISLAB.NS,NSE,Healthcare,,True
+DIXON,DIXON.NS,NSE,Consumer Durables,,True
+LALPATHLAB,LALPATHLAB.NS,NSE,Healthcare,,True
+DRREDDY,DRREDDY.NS,NSE,Healthcare,,True
+EIDPARRY,EIDPARRY.NS,NSE,Fast Moving Consumer Goods,,True
+EIHOTEL,EIHOTEL.NS,NSE,Consumer Services,,True
+EICHERMOT,EICHERMOT.NS,NSE,Automobile and Auto Components,,True
+ELECON,ELECON.NS,NSE,Capital Goods,,True
+ELGIEQUIP,ELGIEQUIP.NS,NSE,Capital Goods,,True
+EMAMILTD,EMAMILTD.NS,NSE,Fast Moving Consumer Goods,,True
+EMCURE,EMCURE.NS,NSE,Healthcare,,True
+EMMVEE,EMMVEE.NS,NSE,Capital Goods,,True
+ENDURANCE,ENDURANCE.NS,NSE,Automobile and Auto Components,,True
+ENGINERSIN,ENGINERSIN.NS,NSE,Construction,,True
+ERIS,ERIS.NS,NSE,Healthcare,,True
+ESCORTS,ESCORTS.NS,NSE,Capital Goods,,True
+ETERNAL,ETERNAL.NS,NSE,Consumer Services,,True
+EXIDEIND,EXIDEIND.NS,NSE,Automobile and Auto Components,,True
+NYKAA,NYKAA.NS,NSE,Consumer Services,,True
+FEDERALBNK,FEDERALBNK.NS,NSE,Financial Services,,True
+FACT,FACT.NS,NSE,Chemicals,,True
+FINCABLES,FINCABLES.NS,NSE,Capital Goods,,True
+FSL,FSL.NS,NSE,Services,,True
+FIVESTAR,FIVESTAR.NS,NSE,Financial Services,,True
+FORCEMOT,FORCEMOT.NS,NSE,Automobile and Auto Components,,True
+FORTIS,FORTIS.NS,NSE,Healthcare,,True
+GAIL,GAIL.NS,NSE,Oil Gas & Consumable Fuels,,True
+GVT&D,GVT&D.NS,NSE,Capital Goods,,True
+GMRAIRPORT,GMRAIRPORT.NS,NSE,Services,,True
+GABRIEL,GABRIEL.NS,NSE,Automobile and Auto Components,,True
+GALLANTT,GALLANTT.NS,NSE,Capital Goods,,True
+GRSE,GRSE.NS,NSE,Capital Goods,,True
+GICRE,GICRE.NS,NSE,Financial Services,,True
+GILLETTE,GILLETTE.NS,NSE,Fast Moving Consumer Goods,,True
+GLAND,GLAND.NS,NSE,Healthcare,,True
+GLAXO,GLAXO.NS,NSE,Healthcare,,True
+GLENMARK,GLENMARK.NS,NSE,Healthcare,,True
+MEDANTA,MEDANTA.NS,NSE,Healthcare,,True
+GODIGIT,GODIGIT.NS,NSE,Financial Services,,True
+GPIL,GPIL.NS,NSE,Capital Goods,,True
+GODFRYPHLP,GODFRYPHLP.NS,NSE,Fast Moving Consumer Goods,,True
+GODREJCP,GODREJCP.NS,NSE,Fast Moving Consumer Goods,,True
+GODREJIND,GODREJIND.NS,NSE,Diversified,,True
+GODREJPROP,GODREJPROP.NS,NSE,Realty,,True
+GRANULES,GRANULES.NS,NSE,Healthcare,,True
+GRAPHITE,GRAPHITE.NS,NSE,Capital Goods,,True
+GRASIM,GRASIM.NS,NSE,Construction Materials,,True
+GRAVITA,GRAVITA.NS,NSE,Metals & Mining,,True
+GESHIP,GESHIP.NS,NSE,Services,,True
+FLUOROCHEM,FLUOROCHEM.NS,NSE,Chemicals,,True
+GMDCLTD,GMDCLTD.NS,NSE,Metals & Mining,,True
+HEG,HEG.NS,NSE,Capital Goods,,True
+HBLENGINE,HBLENGINE.NS,NSE,Capital Goods,,True
+HCLTECH,HCLTECH.NS,NSE,Information Technology,,True
+HDBFS,HDBFS.NS,NSE,Financial Services,,True
+HDFCAMC,HDFCAMC.NS,NSE,Financial Services,,True
+HDFCBANK,HDFCBANK.NS,NSE,Financial Services,,True
+HDFCLIFE,HDFCLIFE.NS,NSE,Financial Services,,True
+HFCL,HFCL.NS,NSE,Telecommunication,,True
+HAVELLS,HAVELLS.NS,NSE,Consumer Durables,,True
+HEROMOTOCO,HEROMOTOCO.NS,NSE,Automobile and Auto Components,,True
+HEXT,HEXT.NS,NSE,Information Technology,,True
+HSCL,HSCL.NS,NSE,Chemicals,,True
+HINDALCO,HINDALCO.NS,NSE,Metals & Mining,,True
+HAL,HAL.NS,NSE,Capital Goods,,True
+HINDCOPPER,HINDCOPPER.NS,NSE,Metals & Mining,,True
+HINDPETRO,HINDPETRO.NS,NSE,Oil Gas & Consumable Fuels,,True
+HINDUNILVR,HINDUNILVR.NS,NSE,Fast Moving Consumer Goods,,True
+HINDZINC,HINDZINC.NS,NSE,Metals & Mining,,True
+POWERINDIA,POWERINDIA.NS,NSE,Capital Goods,,True
+HOMEFIRST,HOMEFIRST.NS,NSE,Financial Services,,True
+HONASA,HONASA.NS,NSE,Fast Moving Consumer Goods,,True
+HONAUT,HONAUT.NS,NSE,Capital Goods,,True
+HUDCO,HUDCO.NS,NSE,Financial Services,,True
+HYUNDAI,HYUNDAI.NS,NSE,Automobile and Auto Components,,True
+ICICIBANK,ICICIBANK.NS,NSE,Financial Services,,True
+ICICIGI,ICICIGI.NS,NSE,Financial Services,,True
+ICICIAMC,ICICIAMC.NS,NSE,Financial Services,,True
+ICICIPRULI,ICICIPRULI.NS,NSE,Financial Services,,True
+IDBI,IDBI.NS,NSE,Financial Services,,True
+IDFCFIRSTB,IDFCFIRSTB.NS,NSE,Financial Services,,True
+IFCI,IFCI.NS,NSE,Financial Services,,True
+IIFL,IIFL.NS,NSE,Financial Services,,True
+IRB,IRB.NS,NSE,Construction,,True
+IRCON,IRCON.NS,NSE,Construction,,True
+ITCHOTELS,ITCHOTELS.NS,NSE,Consumer Services,,True
+ITC,ITC.NS,NSE,Fast Moving Consumer Goods,,True
+ITI,ITI.NS,NSE,Telecommunication,,True
+INDGN,INDGN.NS,NSE,Healthcare,,True
+INDIACEM,INDIACEM.NS,NSE,Construction Materials,,True
+INDIAMART,INDIAMART.NS,NSE,Consumer Services,,True
+INDIANB,INDIANB.NS,NSE,Financial Services,,True
+IEX,IEX.NS,NSE,Financial Services,,True
+INDHOTEL,INDHOTEL.NS,NSE,Consumer Services,,True
+IOC,IOC.NS,NSE,Oil Gas & Consumable Fuels,,True
+IOB,IOB.NS,NSE,Financial Services,,True
+IRCTC,IRCTC.NS,NSE,Consumer Services,,True
+IRFC,IRFC.NS,NSE,Financial Services,,True
+IREDA,IREDA.NS,NSE,Financial Services,,True
+IGL,IGL.NS,NSE,Oil Gas & Consumable Fuels,,True
+INDUSTOWER,INDUSTOWER.NS,NSE,Telecommunication,,True
+INDUSINDBK,INDUSINDBK.NS,NSE,Financial Services,,True
+NAUKRI,NAUKRI.NS,NSE,Consumer Services,,True
+INFY,INFY.NS,NSE,Information Technology,,True
+INOXWIND,INOXWIND.NS,NSE,Capital Goods,,True
+INTELLECT,INTELLECT.NS,NSE,Information Technology,,True
+INDIGO,INDIGO.NS,NSE,Services,,True
+IGIL,IGIL.NS,NSE,Services,,True
+IKS,IKS.NS,NSE,Information Technology,,True
+IPCALAB,IPCALAB.NS,NSE,Healthcare,,True
+JBCHEPHARM,JBCHEPHARM.NS,NSE,Healthcare,,True
+JKCEMENT,JKCEMENT.NS,NSE,Construction Materials,,True
+JBMA,JBMA.NS,NSE,Automobile and Auto Components,,True
+JKTYRE,JKTYRE.NS,NSE,Automobile and Auto Components,,True
+JMFINANCIL,JMFINANCIL.NS,NSE,Financial Services,,True
+JSWCEMENT,JSWCEMENT.NS,NSE,Construction Materials,,True
+JSWDULUX,JSWDULUX.NS,NSE,Consumer Durables,,True
+JSWENERGY,JSWENERGY.NS,NSE,Power,,True
+JSWINFRA,JSWINFRA.NS,NSE,Services,,True
+JSWSTEEL,JSWSTEEL.NS,NSE,Metals & Mining,,True
+JAINREC,JAINREC.NS,NSE,Metals & Mining,,True
+JPPOWER,JPPOWER.NS,NSE,Power,,True
+J&KBANK,J&KBANK.NS,NSE,Financial Services,,True
+JINDALSAW,JINDALSAW.NS,NSE,Capital Goods,,True
+JSL,JSL.NS,NSE,Metals & Mining,,True
+JINDALSTEL,JINDALSTEL.NS,NSE,Metals & Mining,,True
+JIOFIN,JIOFIN.NS,NSE,Financial Services,,True
+JUBLFOOD,JUBLFOOD.NS,NSE,Consumer Services,,True
+JUBLINGREA,JUBLINGREA.NS,NSE,Chemicals,,True
+JUBLPHARMA,JUBLPHARMA.NS,NSE,Healthcare,,True
+JWL,JWL.NS,NSE,Capital Goods,,True
+JYOTICNC,JYOTICNC.NS,NSE,Capital Goods,,True
+KPRMILL,KPRMILL.NS,NSE,Textiles,,True
+KEI,KEI.NS,NSE,Capital Goods,,True
+KPITTECH,KPITTECH.NS,NSE,Information Technology,,True
+KAJARIACER,KAJARIACER.NS,NSE,Consumer Durables,,True
+KPIL,KPIL.NS,NSE,Construction,,True
+KALYANKJIL,KALYANKJIL.NS,NSE,Consumer Durables,,True
+KARURVYSYA,KARURVYSYA.NS,NSE,Financial Services,,True
+KAYNES,KAYNES.NS,NSE,Capital Goods,,True
+KEC,KEC.NS,NSE,Construction,,True
+KFINTECH,KFINTECH.NS,NSE,Financial Services,,True
+KIRLOSENG,KIRLOSENG.NS,NSE,Capital Goods,,True
+KOTAKBANK,KOTAKBANK.NS,NSE,Financial Services,,True
+KIMS,KIMS.NS,NSE,Healthcare,,True
+LTF,LTF.NS,NSE,Financial Services,,True
+LTTS,LTTS.NS,NSE,Information Technology,,True
+LGEINDIA,LGEINDIA.NS,NSE,Consumer Durables,,True
+LICHSGFIN,LICHSGFIN.NS,NSE,Financial Services,,True
+LTFOODS,LTFOODS.NS,NSE,Fast Moving Consumer Goods,,True
+LTM,LTM.NS,NSE,Information Technology,,True
+LT,LT.NS,NSE,Construction,,True
+LATENTVIEW,LATENTVIEW.NS,NSE,Information Technology,,True
+LAURUSLABS,LAURUSLABS.NS,NSE,Healthcare,,True
+THELEELA,THELEELA.NS,NSE,Consumer Services,,True
+LEMONTREE,LEMONTREE.NS,NSE,Consumer Services,,True
+LENSKART,LENSKART.NS,NSE,Consumer Services,,True
+LICI,LICI.NS,NSE,Financial Services,,True
+LINDEINDIA,LINDEINDIA.NS,NSE,Chemicals,,True
+LLOYDSME,LLOYDSME.NS,NSE,Metals & Mining,,True
+LODHA,LODHA.NS,NSE,Realty,,True
+LUPIN,LUPIN.NS,NSE,Healthcare,,True
+MMTC,MMTC.NS,NSE,Services,,True
+MRF,MRF.NS,NSE,Automobile and Auto Components,,True
+MGL,MGL.NS,NSE,Oil Gas & Consumable Fuels,,True
+M&MFIN,M&MFIN.NS,NSE,Financial Services,,True
+M&M,M&M.NS,NSE,Automobile and Auto Components,,True
+MANAPPURAM,MANAPPURAM.NS,NSE,Financial Services,,True
+MRPL,MRPL.NS,NSE,Oil Gas & Consumable Fuels,,True
+MANKIND,MANKIND.NS,NSE,Healthcare,,True
+MARICO,MARICO.NS,NSE,Fast Moving Consumer Goods,,True
+MARUTI,MARUTI.NS,NSE,Automobile and Auto Components,,True
+MFSL,MFSL.NS,NSE,Financial Services,,True
+MAXHEALTH,MAXHEALTH.NS,NSE,Healthcare,,True
+MAZDOCK,MAZDOCK.NS,NSE,Capital Goods,,True
+MEESHO,MEESHO.NS,NSE,Consumer Services,,True
+MINDACORP,MINDACORP.NS,NSE,Automobile and Auto Components,,True
+MSUMI,MSUMI.NS,NSE,Automobile and Auto Components,,True
+MOTILALOFS,MOTILALOFS.NS,NSE,Financial Services,,True
+MPHASIS,MPHASIS.NS,NSE,Information Technology,,True
+MCX,MCX.NS,NSE,Financial Services,,True
+MUTHOOTFIN,MUTHOOTFIN.NS,NSE,Financial Services,,True
+NATCOPHARM,NATCOPHARM.NS,NSE,Healthcare,,True
+NBCC,NBCC.NS,NSE,Construction,,True
+NCC,NCC.NS,NSE,Construction,,True
+NHPC,NHPC.NS,NSE,Power,,True
+NLCINDIA,NLCINDIA.NS,NSE,Power,,True
+NMDC,NMDC.NS,NSE,Metals & Mining,,True
+NSLNISP,NSLNISP.NS,NSE,Metals & Mining,,True
+NTPCGREEN,NTPCGREEN.NS,NSE,Power,,True
+NTPC,NTPC.NS,NSE,Power,,True
+NH,NH.NS,NSE,Healthcare,,True
+NATIONALUM,NATIONALUM.NS,NSE,Metals & Mining,,True
+NAVA,NAVA.NS,NSE,Power,,True
+NAVINFLUOR,NAVINFLUOR.NS,NSE,Chemicals,,True
+NESTLEIND,NESTLEIND.NS,NSE,Fast Moving Consumer Goods,,True
+NETWEB,NETWEB.NS,NSE,Information Technology,,True
+NEULANDLAB,NEULANDLAB.NS,NSE,Healthcare,,True
+NEWGEN,NEWGEN.NS,NSE,Information Technology,,True
+NAM-INDIA,NAM-INDIA.NS,NSE,Financial Services,,True
+NIVABUPA,NIVABUPA.NS,NSE,Financial Services,,True
+NUVAMA,NUVAMA.NS,NSE,Financial Services,,True
+NUVOCO,NUVOCO.NS,NSE,Construction Materials,,True
+OBEROIRLTY,OBEROIRLTY.NS,NSE,Realty,,True
+ONGC,ONGC.NS,NSE,Oil Gas & Consumable Fuels,,True
+OIL,OIL.NS,NSE,Oil Gas & Consumable Fuels,,True
+OLAELEC,OLAELEC.NS,NSE,Automobile and Auto Components,,True
+OLECTRA,OLECTRA.NS,NSE,Automobile and Auto Components,,True
+PAYTM,PAYTM.NS,NSE,Financial Services,,True
+ONESOURCE,ONESOURCE.NS,NSE,Healthcare,,True
+OFSS,OFSS.NS,NSE,Information Technology,,True
+POLICYBZR,POLICYBZR.NS,NSE,Financial Services,,True
+PCBL,PCBL.NS,NSE,Chemicals,,True
+PGEL,PGEL.NS,NSE,Consumer Durables,,True
+PIIND,PIIND.NS,NSE,Chemicals,,True
+PNBHOUSING,PNBHOUSING.NS,NSE,Financial Services,,True
+PTCIL,PTCIL.NS,NSE,Capital Goods,,True
+PVRINOX,PVRINOX.NS,NSE,Media Entertainment & Publication,,True
+PAGEIND,PAGEIND.NS,NSE,Textiles,,True
+PARADEEP,PARADEEP.NS,NSE,Chemicals,,True
+PATANJALI,PATANJALI.NS,NSE,Fast Moving Consumer Goods,,True
+PERSISTENT,PERSISTENT.NS,NSE,Information Technology,,True
+PETRONET,PETRONET.NS,NSE,Oil Gas & Consumable Fuels,,True
+PFIZER,PFIZER.NS,NSE,Healthcare,,True
+PHOENIXLTD,PHOENIXLTD.NS,NSE,Realty,,True
+PWL,PWL.NS,NSE,Consumer Services,,True
+PIDILITIND,PIDILITIND.NS,NSE,Chemicals,,True
+PINELABS,PINELABS.NS,NSE,Financial Services,,True
+PIRAMALFIN,PIRAMALFIN.NS,NSE,Financial Services,,True
+PPLPHARMA,PPLPHARMA.NS,NSE,Healthcare,,True
+POLYMED,POLYMED.NS,NSE,Healthcare,,True
+POLYCAB,POLYCAB.NS,NSE,Capital Goods,,True
+POONAWALLA,POONAWALLA.NS,NSE,Financial Services,,True
+PFC,PFC.NS,NSE,Financial Services,,True
+POWERGRID,POWERGRID.NS,NSE,Power,,True
+PREMIERENE,PREMIERENE.NS,NSE,Capital Goods,,True
+PRESTIGE,PRESTIGE.NS,NSE,Realty,,True
+PNB,PNB.NS,NSE,Financial Services,,True
+RRKABEL,RRKABEL.NS,NSE,Capital Goods,,True
+RBLBANK,RBLBANK.NS,NSE,Financial Services,,True
+RECLTD,RECLTD.NS,NSE,Financial Services,,True
+RHIM,RHIM.NS,NSE,Capital Goods,,True
+RITES,RITES.NS,NSE,Construction,,True
+RADICO,RADICO.NS,NSE,Fast Moving Consumer Goods,,True
+RVNL,RVNL.NS,NSE,Construction,,True
+RAILTEL,RAILTEL.NS,NSE,Telecommunication,,True
+RAINBOW,RAINBOW.NS,NSE,Healthcare,,True
+RKFORGE,RKFORGE.NS,NSE,Automobile and Auto Components,,True
+REDINGTON,REDINGTON.NS,NSE,Services,,True
+RELIANCE,RELIANCE.NS,NSE,Oil Gas & Consumable Fuels,,True
+RPOWER,RPOWER.NS,NSE,Power,,True
+SBFC,SBFC.NS,NSE,Financial Services,,True
+SBICARD,SBICARD.NS,NSE,Financial Services,,True
+SBILIFE,SBILIFE.NS,NSE,Financial Services,,True
+SJVN,SJVN.NS,NSE,Power,,True
+SRF,SRF.NS,NSE,Chemicals,,True
+SAGILITY,SAGILITY.NS,NSE,Information Technology,,True
+SAILIFE,SAILIFE.NS,NSE,Healthcare,,True
+SAMMAANCAP,SAMMAANCAP.NS,NSE,Financial Services,,True
+MOTHERSON,MOTHERSON.NS,NSE,Automobile and Auto Components,,True
+SAPPHIRE,SAPPHIRE.NS,NSE,Consumer Services,,True
+SARDAEN,SARDAEN.NS,NSE,Metals & Mining,,True
+SAREGAMA,SAREGAMA.NS,NSE,Media Entertainment & Publication,,True
+SCHAEFFLER,SCHAEFFLER.NS,NSE,Automobile and Auto Components,,True
+SCHNEIDER,SCHNEIDER.NS,NSE,Capital Goods,,True
+SCI,SCI.NS,NSE,Services,,True
+SHREECEM,SHREECEM.NS,NSE,Construction Materials,,True
+SHRIRAMFIN,SHRIRAMFIN.NS,NSE,Financial Services,,True
+SHYAMMETL,SHYAMMETL.NS,NSE,Capital Goods,,True
+ENRIN,ENRIN.NS,NSE,Capital Goods,,True
+SIEMENS,SIEMENS.NS,NSE,Capital Goods,,True
+SIGNATURE,SIGNATURE.NS,NSE,Realty,,True
+SOBHA,SOBHA.NS,NSE,Realty,,True
+SOLARINDS,SOLARINDS.NS,NSE,Chemicals,,True
+SONACOMS,SONACOMS.NS,NSE,Automobile and Auto Components,,True
+SONATSOFTW,SONATSOFTW.NS,NSE,Information Technology,,True
+STARHEALTH,STARHEALTH.NS,NSE,Financial Services,,True
+SBIN,SBIN.NS,NSE,Financial Services,,True
+SAIL,SAIL.NS,NSE,Metals & Mining,,True
+SUMICHEM,SUMICHEM.NS,NSE,Chemicals,,True
+SUNPHARMA,SUNPHARMA.NS,NSE,Healthcare,,True
+SUNTV,SUNTV.NS,NSE,Media Entertainment & Publication,,True
+SUNDARMFIN,SUNDARMFIN.NS,NSE,Financial Services,,True
+SUPREMEIND,SUPREMEIND.NS,NSE,Capital Goods,,True
+SPLPETRO,SPLPETRO.NS,NSE,Chemicals,,True
+SUZLON,SUZLON.NS,NSE,Capital Goods,,True
+SWANCORP,SWANCORP.NS,NSE,Chemicals,,True
+SWIGGY,SWIGGY.NS,NSE,Consumer Services,,True
+SYNGENE,SYNGENE.NS,NSE,Healthcare,,True
+SYRMA,SYRMA.NS,NSE,Capital Goods,,True
+TBOTEK,TBOTEK.NS,NSE,Consumer Services,,True
+TVSMOTOR,TVSMOTOR.NS,NSE,Automobile and Auto Components,,True
+TATACAP,TATACAP.NS,NSE,Financial Services,,True
+TATACHEM,TATACHEM.NS,NSE,Chemicals,,True
+TATACOMM,TATACOMM.NS,NSE,Telecommunication,,True
+TCS,TCS.NS,NSE,Information Technology,,True
+TATACONSUM,TATACONSUM.NS,NSE,Fast Moving Consumer Goods,,True
+TATAELXSI,TATAELXSI.NS,NSE,Information Technology,,True
+TATAINVEST,TATAINVEST.NS,NSE,Financial Services,,True
+TMCV,TMCV.NS,NSE,Capital Goods,,True
+TMPV,TMPV.NS,NSE,Automobile and Auto Components,,True
+TATAPOWER,TATAPOWER.NS,NSE,Power,,True
+TATASTEEL,TATASTEEL.NS,NSE,Metals & Mining,,True
+TATATECH,TATATECH.NS,NSE,Information Technology,,True
+TTML,TTML.NS,NSE,Telecommunication,,True
+TECHM,TECHM.NS,NSE,Information Technology,,True
+TECHNOE,TECHNOE.NS,NSE,Construction,,True
+TEGA,TEGA.NS,NSE,Capital Goods,,True
+TEJASNET,TEJASNET.NS,NSE,Telecommunication,,True
+TENNIND,TENNIND.NS,NSE,Automobile and Auto Components,,True
+NIACL,NIACL.NS,NSE,Financial Services,,True
+RAMCOCEM,RAMCOCEM.NS,NSE,Construction Materials,,True
+THERMAX,THERMAX.NS,NSE,Capital Goods,,True
+TIMKEN,TIMKEN.NS,NSE,Capital Goods,,True
+TITAGARH,TITAGARH.NS,NSE,Capital Goods,,True
+TITAN,TITAN.NS,NSE,Consumer Durables,,True
+TORNTPHARM,TORNTPHARM.NS,NSE,Healthcare,,True
+TORNTPOWER,TORNTPOWER.NS,NSE,Power,,True
+TARIL,TARIL.NS,NSE,Capital Goods,,True
+TRAVELFOOD,TRAVELFOOD.NS,NSE,Consumer Services,,True
+TRENT,TRENT.NS,NSE,Consumer Services,,True
+TRIDENT,TRIDENT.NS,NSE,Textiles,,True
+TRITURBINE,TRITURBINE.NS,NSE,Capital Goods,,True
+TIINDIA,TIINDIA.NS,NSE,Automobile and Auto Components,,True
+UCOBANK,UCOBANK.NS,NSE,Financial Services,,True
+UNOMINDA,UNOMINDA.NS,NSE,Automobile and Auto Components,,True
+UPL,UPL.NS,NSE,Chemicals,,True
+UTIAMC,UTIAMC.NS,NSE,Financial Services,,True
+ULTRACEMCO,ULTRACEMCO.NS,NSE,Construction Materials,,True
+UNIONBANK,UNIONBANK.NS,NSE,Financial Services,,True
+UBL,UBL.NS,NSE,Fast Moving Consumer Goods,,True
+UNITDSPR,UNITDSPR.NS,NSE,Fast Moving Consumer Goods,,True
+URBANCO,URBANCO.NS,NSE,Consumer Services,,True
+USHAMART,USHAMART.NS,NSE,Capital Goods,,True
+VTL,VTL.NS,NSE,Textiles,,True
+VBL,VBL.NS,NSE,Fast Moving Consumer Goods,,True
+VEDL,VEDL.NS,NSE,Metals & Mining,,True
+VIJAYA,VIJAYA.NS,NSE,Healthcare,,True
+VMM,VMM.NS,NSE,Consumer Services,,True
+IDEA,IDEA.NS,NSE,Telecommunication,,True
+VOLTAS,VOLTAS.NS,NSE,Consumer Durables,,True
+WAAREEENER,WAAREEENER.NS,NSE,Capital Goods,,True
+WELCORP,WELCORP.NS,NSE,Capital Goods,,True
+WELSPUNLIV,WELSPUNLIV.NS,NSE,Textiles,,True
+WHIRLPOOL,WHIRLPOOL.NS,NSE,Consumer Durables,,True
+WIPRO,WIPRO.NS,NSE,Information Technology,,True
+WOCKPHARMA,WOCKPHARMA.NS,NSE,Healthcare,,True
+YESBANK,YESBANK.NS,NSE,Financial Services,,True
+ZFCVINDIA,ZFCVINDIA.NS,NSE,Automobile and Auto Components,,True
+ZEEL,ZEEL.NS,NSE,Media Entertainment & Publication,,True
+ZENTEC,ZENTEC.NS,NSE,Capital Goods,,True
+ZENSARTECH,ZENSARTECH.NS,NSE,Information Technology,,True
+ZYDUSLIFE,ZYDUSLIFE.NS,NSE,Healthcare,,True
+ZYDUSWELL,ZYDUSWELL.NS,NSE,Fast Moving Consumer Goods,,True
+ECLERX,ECLERX.NS,NSE,Services,,True
