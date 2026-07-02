@@ -20,13 +20,42 @@ SCOPES = [
 def get_sheet_client(tab_name):
     """
     Returns a gspread worksheet object for the given tab name.
+    Handles both local (google_credentials.json) and
+    Streamlit Cloud (st.secrets) environments automatically.
     """
-    creds  = Credentials.from_service_account_file(CREDENTIALS_FILE,
-                                                    scopes=SCOPES)
-    client = gspread.authorize(creds)
-    sheet  = client.open_by_key(SHEET_ID)
-    return sheet.worksheet(tab_name)
+    try:
+        # Try Streamlit Cloud secrets first
+        import streamlit as st
+        if "google_credentials" in st.secrets:
+            creds_dict = {
+                "type":                        st.secrets["google_credentials"]["type"],
+                "project_id":                  st.secrets["google_credentials"]["project_id"],
+                "private_key_id":              st.secrets["google_credentials"]["private_key_id"],
+                "private_key":                 st.secrets["google_credentials"]["private_key"],
+                "client_email":                st.secrets["google_credentials"]["client_email"],
+                "client_id":                   st.secrets["google_credentials"]["client_id"],
+                "auth_uri":                    st.secrets["google_credentials"]["auth_uri"],
+                "token_uri":                   st.secrets["google_credentials"]["token_uri"],
+                "auth_provider_x509_cert_url": st.secrets["google_credentials"]["auth_provider_x509_cert_url"],
+                "client_x509_cert_url":        st.secrets["google_credentials"]["client_x509_cert_url"]
+            }
+            creds = Credentials.from_service_account_info(
+                creds_dict, scopes=SCOPES
+            )
+            sheet_id = st.secrets["GOOGLE_SHEET_ID"]
+        else:
+            raise KeyError("No streamlit secrets found")
 
+    except Exception:
+        # Fall back to local credentials file
+        creds    = Credentials.from_service_account_file(
+            CREDENTIALS_FILE, scopes=SCOPES
+        )
+        sheet_id = SHEET_ID
+
+    client = gspread.authorize(creds)
+    sheet  = client.open_by_key(sheet_id)
+    return sheet.worksheet(tab_name)
 
 def get_trading_capital():
     """
