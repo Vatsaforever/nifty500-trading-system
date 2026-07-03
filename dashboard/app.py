@@ -27,69 +27,63 @@ st.markdown("""
 
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
-        background-color: #0e1117;
+        background-color: #f8fafc;
     }
 
-    /* Metric Cards */
     .card {
-        background: #1a1d2e;
-        border-radius: 12px;
-        padding: 18px 20px;
+        background: #f8fafc;
+        border: 0.5px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 14px 16px;
+        min-height: 80px;
         margin: 4px 0;
-        border-left: 4px solid #444;
-        min-height: 90px;
     }
-    .card-green  { border-left-color: #00c853; }
-    .card-red    { border-left-color: #ff1744; }
-    .card-blue   { border-left-color: #2979ff; }
-    .card-yellow { border-left-color: #ffd600; }
-    .card-orange { border-left-color: #ff6d00; }
-    .card-purple { border-left-color: #aa00ff; }
-    .card-teal   { border-left-color: #00bfa5; }
-
-    .card-icon {
-        font-size: 1.1rem;
+    .card-badge-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         margin-bottom: 4px;
-        opacity: 0.8;
+    }
+    .card-badge {
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        line-height: 1;
     }
     .card-label {
         font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
+        font-weight: 500;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #9e9e9e;
-        margin-bottom: 6px;
-    }
-    .card-value {
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: #ffffff;
-        letter-spacing: -0.5px;
-        line-height: 1.1;
+        color: #64748b;
     }
     .card-sub {
-        font-size: 0.75rem;
-        color: #757575;
-        margin-top: 4px;
+        font-size: 0.72rem;
+        color: #94a3b8;
+        margin-top: 2px;
+        padding-left: 2px;
     }
-    .card-value-green  { color: #00c853; }
-    .card-value-red    { color: #ff1744; }
-    .card-value-yellow { color: #ffd600; }
-    .card-value-orange { color: #ff6d00; }
 
-    /* Section Headers */
+    .badge-blue   { background: #eff6ff; color: #3b82f6; }
+    .badge-green  { background: #f0fdf4; color: #16a34a; }
+    .badge-amber  { background: #fffbeb; color: #d97706; }
+    .badge-red    { background: #fef2f2; color: #dc2626; }
+    .badge-purple { background: #faf5ff; color: #7c3aed; }
+    .badge-teal   { background: #f0fdfa; color: #0d9488; }
+    .badge-slate  { background: #f1f5f9; color: #475569; }
+
     .section-title {
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #616161;
-        margin: 24px 0 12px 0;
+        color: #94a3b8;
+        margin: 20px 0 10px 0;
         padding-bottom: 6px;
-        border-bottom: 1px solid #1e2130;
+        border-bottom: 0.5px solid #e2e8f0;
     }
 
-    /* Health Bar */
     .health-row {
         display: flex;
         align-items: center;
@@ -97,14 +91,14 @@ st.markdown("""
         gap: 12px;
     }
     .health-label {
-        font-size: 0.78rem;
-        color: #9e9e9e;
+        font-size: 0.76rem;
+        color: #64748b;
         width: 100px;
         flex-shrink: 0;
     }
     .health-bar-bg {
         flex: 1;
-        background: #1e2130;
+        background: #f1f5f9;
         border-radius: 4px;
         height: 6px;
         overflow: hidden;
@@ -116,85 +110,74 @@ st.markdown("""
     .health-count {
         font-size: 0.82rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #1e293b;
         width: 24px;
         text-align: right;
         flex-shrink: 0;
     }
 
-    /* Regime Panel */
     .regime-panel {
-        background: #1a1d2e;
-        border-radius: 12px;
+        background: #f8fafc;
+        border: 0.5px solid #e2e8f0;
+        border-radius: 10px;
         padding: 20px;
         height: 100%;
     }
-    .regime-bull {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #00c853;
-        letter-spacing: 2px;
-    }
-    .regime-bear {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #ff1744;
-        letter-spacing: 2px;
-    }
-    .regime-neutral {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #ffd600;
-        letter-spacing: 2px;
-    }
     .regime-desc {
-        font-size: 0.8rem;
-        color: #9e9e9e;
+        font-size: 0.78rem;
+        color: #64748b;
         margin-top: 8px;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
-    /* Streamlit overrides */
+    .status-open    { color: #16a34a; font-weight: 600; font-size: 0.76rem; }
+    .status-pending { color: #d97706; font-weight: 600; font-size: 0.76rem; }
+
     .stMetric label {
-        font-size: 0.78rem;
-        color: #9e9e9e;
+        font-size: 0.72rem;
+        color: #64748b;
         font-weight: 500;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
     }
     div[data-testid="stMetricValue"] {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
+        color: #0f172a;
     }
     h1 {
         font-weight: 700;
         letter-spacing: -0.5px;
-        font-size: 1.6rem !important;
+        font-size: 1.4rem !important;
+        color: #0f172a !important;
     }
     .stTabs [data-baseweb="tab"] {
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         font-weight: 500;
-        letter-spacing: 0.05em;
     }
     div[data-testid="stDataFrame"] {
         border-radius: 8px;
+        border: 0.5px solid #e2e8f0;
+    }
+    .stExpander {
+        border: 0.5px solid #e2e8f0 !important;
+        border-radius: 10px !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
 
 # --- Helpers ---
-def card(icon, label, value, sub="", color="blue", value_color=""):
-    vc = f"card-value-{value_color}" if value_color else "card-value"
+def card(icon, label, value, sub="", badge_color="blue"):
     st.markdown(f"""
-    <div class="card card-{color}">
-        <div class="card-icon">{icon}</div>
-        <div class="card-label">{label}</div>
-        <div class="{vc}">{value}</div>
+    <div class="card">
+        <div class="card-badge-row">
+            <span class="card-badge badge-{badge_color}">{value}</span>
+            <span class="card-label">{label}</span>
+        </div>
         <div class="card-sub">{sub}</div>
     </div>
     """, unsafe_allow_html=True)
-
 
 def health_bar(label, count, total, color):
     pct = (count / total * 100) if total > 0 else 0
@@ -424,23 +407,23 @@ def render_performance_cards(trades_df):
 
     c1, c2, c3, c4, c5 = st.columns(5)
     with c1:
-        card("📊", "Total Trades", total,
+        card("", "Total Trades", total,
              f"{wins}W / {losses}L", "blue")
     with c2:
-        card("🎯", "Win Rate", f"{win_rate}%",
+        card("", "Win Rate", f"{win_rate}%",
              "closed trades", "green")
     with c3:
-        card("📐", "Avg R", avg_r,
-             "per trade", "teal",
-             value_color=r_color)
+        card("", "Avg R", avg_r,
+             "per trade",
+             "green" if avg_r >= 0 else "red")
     with c4:
-        card("⚖️", "Profit Factor", pf,
+        card("", "Profit Factor", pf,
              "gross profit / loss", "purple")
     with c5:
-        card("💰", "Total P&L",
+        card("", "Total P&L",
              f"₹{total_pnl:,.0f}",
-             "all closed trades", "green",
-             value_color=pnl_color)
+             "all closed trades",
+             "green" if total_pnl >= 0 else "red")
 
 
 # --- Top Metric Cards Row 2: Portfolio ---
@@ -457,34 +440,40 @@ def render_portfolio_cards(pm, wl_count):
     )
     c1, c2, c3, c4, c5, c6, c7 = st.columns(7)
     with c1:
-        card("📂", "Holdings",
+        card("", "Holdings",
              pm["open_count"],
              "active positions", "blue")
     with c2:
-        card("🔍", "Watch List",
+        card("", "Watch List",
              wl_count,
              "monitor closely", "teal")
     with c3:
-        card("⏳", "Pending",
+        card("", "Pending",
              pm["pending_count"],
-             "awaiting fill", "yellow")
+             "awaiting fill", "amber")
     with c4:
-        card("🌡️", "Portfolio Heat",
+        heat_color = (
+            "red"   if pm["portfolio_heat"] > 10 else
+            "amber" if pm["portfolio_heat"] > 5  else
+            "green"
+        )
+        card("", "Portfolio Heat",
              f"{pm['portfolio_heat']}%",
-             "total risk / capital",
-             heat_color, value_color=heat_color)
+             "total risk / capital", heat_color)
     with c5:
-        card("🎯", "Capital at Risk",
+        card("", "Capital at Risk",
              f"{pm['capital_at_risk']}%",
-             "exit/prepare positions", "orange")
+             "across open trades", "amber")
     with c6:
-        card("⚠️", "EMA Alerts",
+        card("", "EMA Alerts",
              pm["ema_alerts"],
-             "consider exiting", "red")
+             "consider exiting",
+             "red" if pm["ema_alerts"] > 0 else "slate")
     with c7:
-        card("🏁", "Near TP",
+        card("", "Near TP",
              pm["near_tp"],
-             "within 20% of target", "green")
+             "within 20% of target",
+             "green" if pm["near_tp"] > 0 else "slate")
 
 
 def render_portfolio_health(pm):
@@ -818,17 +807,15 @@ def main():
 
     # Header
     st.markdown(
-        "<h1>📈 Nifty 500 · Trading Dashboard</h1>",
+        "<h1 style='color:#0f172a;'>Nifty 500 · Trading Dashboard</h1>",
         unsafe_allow_html=True
     )
     st.markdown(
-        "<p style='color:#616161; font-size:0.82rem; "
+        "<p style='color:#94a3b8; font-size:0.8rem; "
         "margin-top:-12px;'>Scanner intelligence and "
         "holding action dashboard</p>",
         unsafe_allow_html=True
     )
-    st.markdown("---")
-
     # Row 1: Performance cards
     render_performance_cards(trades_df)
 
