@@ -36,6 +36,28 @@ def run_weekly_scan():
     symbols      = active["symbol"].tolist()
     sector_map   = active.set_index("symbol")["sector"].to_dict()
 
+    # Clear previous WL entries from Signals sheet
+    # (keeps ENTRY_INITIAL and ENTRY_UPDATED rows intact)
+    print("Clearing previous WL entries from Signals sheet...")
+    try:
+        from scripts.sheets.sheets_writer import get_sheet_client
+        ws      = get_sheet_client("Signals")
+        records = ws.get_all_values()
+        rows_to_delete = []
+        for idx, row in enumerate(records):
+            if idx == 0:
+                continue   # skip header
+            if len(row) > 1 and row[1] == "WL":
+                rows_to_delete.append(idx + 1)   # 1-indexed
+
+        # Delete in reverse order so row numbers stay valid
+        for row_num in reversed(rows_to_delete):
+            ws.delete_rows(row_num)
+
+        print(f"  Cleared {len(rows_to_delete)} old WL entries.")
+    except Exception as e:
+        print(f"  Warning: could not clear old WL entries: {e}")
+
     # Load company names from instrument map
     from scripts.utils.config import INSTRUMENT_MAP_FILE
     imap_df      = pd.read_csv(INSTRUMENT_MAP_FILE)
