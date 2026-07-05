@@ -1,0 +1,51 @@
+symbol,yf_symbol,exchange,sector,notes,active
+RELIANCE,RELIANCE.NS,NSE,Oil Gas & Consumable Fuels,Nifty 50,True
+TCS,TCS.NS,NSE,Information Technology,Nifty 50,True
+HDFCBANK,HDFCBANK.NS,NSE,Financial Services,Nifty 50,True
+BHARTIARTL,BHARTIARTL.NS,NSE,Telecommunication,Nifty 50,True
+ICICIBANK,ICICIBANK.NS,NSE,Financial Services,Nifty 50,True
+INFY,INFY.NS,NSE,Information Technology,Nifty 50,True
+SBIN,SBIN.NS,NSE,Financial Services,Nifty 50,True
+LICI,LICI.NS,NSE,Financial Services,Nifty 50,True
+HINDUNILVR,HINDUNILVR.NS,NSE,Fast Moving Consumer Goods,Nifty 50,True
+ITC,ITC.NS,NSE,Fast Moving Consumer Goods,Nifty 50,True
+BAJFINANCE,BAJFINANCE.NS,NSE,Financial Services,Nifty 50,True
+KOTAKBANK,KOTAKBANK.NS,NSE,Financial Services,Nifty 50,True
+LT,LT.NS,NSE,Construction,Nifty 50,True
+HCLTECH,HCLTECH.NS,NSE,Information Technology,Nifty 50,True
+MARUTI,MARUTI.NS,NSE,Automobile and Auto Components,Nifty 50,True
+AXISBANK,AXISBANK.NS,NSE,Financial Services,Nifty 50,True
+ASIANPAINT,ASIANPAINT.NS,NSE,Consumer Durables,Nifty 50,True
+TITAN,TITAN.NS,NSE,Consumer Durables,Nifty 50,True
+NTPC,NTPC.NS,NSE,Power,Nifty 50,True
+ONGC,ONGC.NS,NSE,Oil Gas & Consumable Fuels,Nifty 50,True
+POWERGRID,POWERGRID.NS,NSE,Power,Nifty 50,True
+ULTRACEMCO,ULTRACEMCO.NS,NSE,Construction Materials,Nifty 50,True
+WIPRO,WIPRO.NS,NSE,Information Technology,Nifty 50,True
+ADANIENT,ADANIENT.NS,NSE,Metals & Mining,Nifty 50,True
+JSWSTEEL,JSWSTEEL.NS,NSE,Metals & Mining,Nifty 50,True
+TATAMOTORS,TATAMOTORS.NS,NSE,,Nifty 50,True
+INDUSINDBK,INDUSINDBK.NS,NSE,Financial Services,Nifty 50,True
+HINDALCO,HINDALCO.NS,NSE,Metals & Mining,Nifty 50,True
+DRREDDY,DRREDDY.NS,NSE,Healthcare,Nifty 50,True
+SUNPHARMA,SUNPHARMA.NS,NSE,Healthcare,Nifty 50,True
+COALINDIA,COALINDIA.NS,NSE,Oil Gas & Consumable Fuels,Nifty 50,True
+TECHM,TECHM.NS,NSE,Information Technology,Nifty 50,True
+BAJAJFINSV,BAJAJFINSV.NS,NSE,Financial Services,Nifty 50,True
+TATACONSUM,TATACONSUM.NS,NSE,Fast Moving Consumer Goods,Nifty 50,True
+DIVISLAB,DIVISLAB.NS,NSE,Healthcare,Nifty 50,True
+GRASIM,GRASIM.NS,NSE,Construction Materials,Nifty 50,True
+BRITANNIA,BRITANNIA.NS,NSE,Fast Moving Consumer Goods,Nifty 50,True
+APOLLOHOSP,APOLLOHOSP.NS,NSE,Healthcare,Nifty 50,True
+CIPLA,CIPLA.NS,NSE,Healthcare,Nifty 50,True
+EICHERMOT,EICHERMOT.NS,NSE,Automobile and Auto Components,Nifty 50,True
+BPCL,BPCL.NS,NSE,Oil Gas & Consumable Fuels,Nifty 50,True
+NESTLEIND,NESTLEIND.NS,NSE,Fast Moving Consumer Goods,Nifty 50,True
+HEROMOTOCO,HEROMOTOCO.NS,NSE,Automobile and Auto Components,Nifty 50,True
+BAJAJ-AUTO,BAJAJ-AUTO.NS,NSE,Automobile and Auto Components,Nifty 50,True
+TATAPOWER,TATAPOWER.NS,NSE,Power,Nifty 50,True
+ADANIPORTS,ADANIPORTS.NS,NSE,Services,Nifty 50,True
+SBILIFE,SBILIFE.NS,NSE,Financial Services,Nifty 50,True
+HDFCLIFE,HDFCLIFE.NS,NSE,Financial Services,Nifty 50,True
+TATASTEEL,TATASTEEL.NS,NSE,Metals & Mining,Nifty 50,True
+M&M,M&M.NS,NSE,Automobile and Auto Components,Nifty 50,True

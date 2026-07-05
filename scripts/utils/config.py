@@ -33,6 +33,6 @@ EMA_EXIT_SLOW         = 21
 VOLUME_AVG_PERIOD     = 14
 TP_MULTIPLE           = 1.5
 RISK_PCT              = 0.0025    # 0.25% of capital
-
+MAX_POSITION_VALUE = 100000   # ₹1L max capital per single trade
 # --- Risk (capital read live from Sheets at runtime) ---
 # get_risk_amount() in sheets_writer.py handles this

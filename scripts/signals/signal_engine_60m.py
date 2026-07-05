@@ -56,8 +56,12 @@ def compute_trade_levels(signal_candle, atr_value, risk_amount,
                           tp_multiple=None):
     """
     Computes entry, SL, TP, quantity from a signal candle.
-    Returns a dict or None if quantity works out to zero.
+    Quantity is the LOWER of:
+    - floor(risk_amount / risk_per_share)  — risk-based sizing
+    - floor(MAX_POSITION_VALUE / entry)    — position cap sizing
+    Returns None if quantity is zero.
     """
+    from scripts.utils.config import MAX_POSITION_VALUE
     tp_multiple = tp_multiple or TP_MULTIPLE
 
     entry          = round(signal_candle["high"] + atr_value, 2)
@@ -67,11 +71,22 @@ def compute_trade_levels(signal_candle, atr_value, risk_amount,
     if risk_per_share <= 0:
         return None
 
-    quantity = math.floor(risk_amount / risk_per_share)
+    # Risk-based quantity
+    qty_risk = math.floor(risk_amount / risk_per_share)
+
+    # Position cap quantity
+    qty_cap  = math.floor(MAX_POSITION_VALUE / entry)
+
+    # Take the lower of the two
+    quantity = min(qty_risk, qty_cap)
+
     if quantity == 0:
         return None
 
     tp = round(entry + tp_multiple * (entry - sl), 2)
+
+    # Actual risk after capping (may be less than risk_amount)
+    actual_risk = round(risk_per_share * quantity, 2)
 
     return {
         "entry":          entry,
@@ -79,7 +94,7 @@ def compute_trade_levels(signal_candle, atr_value, risk_amount,
         "tp":             tp,
         "risk_per_share": risk_per_share,
         "quantity":       quantity,
-        "risk_amount":    round(risk_amount, 2)
+        "risk_amount":    actual_risk
     }
 
 
