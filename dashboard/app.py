@@ -853,7 +853,6 @@ def load_ft_data():
         )
     except Exception:
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
-        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
 
 def render_forward_test(ft_pb, ft_orb, ft_sum):
