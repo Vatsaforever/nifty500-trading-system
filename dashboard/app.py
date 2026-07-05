@@ -830,6 +830,111 @@ def render_orb_signals():
     ).sort_values('Time', ascending=False).reset_index(drop=True)
     st.dataframe(display, use_container_width=True, hide_index=True)
 
+    @st.cache_data(ttl=300)
+def load_ft_data():
+    try:
+        pb  = get_sheet_client("FT Pullback")
+        orb = get_sheet_client("FT ORB")
+        sm  = get_sheet_client("FT Summary")
+        return (
+            pd.DataFrame(pb.get_all_records()),
+            pd.DataFrame(orb.get_all_records()),
+            pd.DataFrame(sm.get_all_records())
+        )
+    except Exception:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+
+def render_forward_test(ft_pb, ft_orb, ft_sum):
+    st.markdown(
+        "<div class='section-title'>"
+        "Forward Test — Live Paper Trading</div>",
+        unsafe_allow_html=True
+    )
+
+    col1, col2 = st.columns(2)
+
+    # Pullback summary
+    with col1:
+        st.markdown("**Pullback System (₹10L)**")
+        if not ft_pb.empty:
+            total  = len(ft_pb)
+            closed = ft_pb[ft_pb['status'] == 'CLOSED']
+            open_t = ft_pb[ft_pb['status'] == 'OPEN']
+            wins   = len(closed[
+                pd.to_numeric(closed['r_multiple'],
+                              errors='coerce') > 0
+            ]) if not closed.empty else 0
+            pnl    = pd.to_numeric(
+                closed['pnl_rupees'], errors='coerce'
+            ).sum() if not closed.empty else 0
+            net    = pnl - len(closed) * 75
+
+            st.metric("Total Signals",  total)
+            st.metric("Open Trades",    len(open_t))
+            st.metric("Closed Trades",  len(closed))
+            st.metric("Wins",           wins)
+            st.metric("Net P&L",        f"₹{net:,.0f}")
+        else:
+            st.info("No pullback FT trades yet.")
+
+    # ORB summary
+    with col2:
+        st.markdown("**ORB System (₹10L)**")
+        if not ft_orb.empty:
+            total  = len(ft_orb)
+            closed = ft_orb[ft_orb['status'] == 'CLOSED']
+            open_t = ft_orb[ft_orb['status'] == 'OPEN']
+            wins   = len(closed[
+                pd.to_numeric(closed['r_multiple'],
+                              errors='coerce') > 0
+            ]) if not closed.empty else 0
+            pnl    = pd.to_numeric(
+                closed['pnl_rupees'], errors='coerce'
+            ).sum() if not closed.empty else 0
+            net    = pnl - len(closed) * 75
+
+            st.metric("Total Signals",  total)
+            st.metric("Open Trades",    len(open_t))
+            st.metric("Closed Trades",  len(closed))
+            st.metric("Wins",           wins)
+            st.metric("Net P&L",        f"₹{net:,.0f}")
+        else:
+            st.info("No ORB FT trades yet.")
+
+    # Open trades detail
+    if not ft_pb.empty:
+        open_pb = ft_pb[ft_pb['status'] == 'OPEN']
+        if not open_pb.empty:
+            with st.expander(
+                f"📋 Pullback Open Trades ({len(open_pb)})",
+                expanded=True
+            ):
+                st.dataframe(
+                    open_pb[[
+                        'entry_date', 'symbol', 'sector',
+                        'entry_price', 'sl', 'tp', 'quantity'
+                    ]].reset_index(drop=True),
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+    if not ft_orb.empty:
+        open_orb = ft_orb[ft_orb['status'] == 'OPEN']
+        if not open_orb.empty:
+            with st.expander(
+                f"🚀 ORB Open Trades ({len(open_orb)})",
+                expanded=True
+            ):
+                st.dataframe(
+                    open_orb[[
+                        'trade_date', 'symbol', 'sector',
+                        'entry_price', 'sl', 'tp', 'quantity'
+                    ]].reset_index(drop=True),
+                    use_container_width=True,
+                    hide_index=True
+                )
+
 # --- Main ---
 def main():
     signals_df, trades_df, stats_raw = (
@@ -906,7 +1011,10 @@ def main():
         render_signals(signals_df)
     with tab2:
         render_trade_history(trades_df)
-
+# Forward Test
+    ft_pb, ft_orb, ft_sum = load_ft_data()
+    render_forward_test(ft_pb, ft_orb, ft_sum)
+    st.markdown("---")
 
 if __name__ == "__main__":
     main()
