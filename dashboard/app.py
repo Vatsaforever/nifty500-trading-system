@@ -774,7 +774,61 @@ def render_trade_history(trades_df):
     )
     st.dataframe(styled, use_container_width=True,
                  hide_index=True, height=400)
+def render_orb_signals():
+    st.markdown(
+        "<div class='section-title'>ORB Signals — Nifty 50 Intraday</div>",
+        unsafe_allow_html=True
+    )
+    try:
+        orb_ws  = get_sheet_client("ORB Signals")
+        records = orb_ws.get_all_records()
+        orb_df  = pd.DataFrame(records)
+    except Exception as e:
+        st.info("ORB Signals sheet not available.")
+        return
 
+    if orb_df.empty:
+        st.info("No ORB signals yet — scanner runs at 9:30 AM on trading days.")
+        return
+
+    orb_df['timestamp'] = pd.to_datetime(orb_df['timestamp'])
+    today    = pd.Timestamp.now().date()
+    today_df = orb_df[orb_df['timestamp'].dt.date == today].copy()
+
+    if today_df.empty:
+        last_date = orb_df['timestamp'].max().date()
+        st.info(f"No ORB signals today. Last signal date: {last_date}")
+        all_df = orb_df.copy()
+    else:
+        st.markdown(
+            f"<p style='font-size:0.78rem; color:#16a34a; font-weight:600;'>"
+            f"● {len(today_df)} signal(s) today — "
+            f"place MIS SL-M orders in Zerodha, close by 3:15 PM</p>",
+            unsafe_allow_html=True
+        )
+        all_df = orb_df.copy()
+
+    ORB_COLS = {
+        'timestamp':   'Time',
+        'symbol':      'Symbol',
+        'sector':      'Sector',
+        'or_high':     'OR High (₹)',
+        'or_low':      'OR Low (₹)',
+        'range_pct':   'Range %',
+        'gap_pct':     'Gap %',
+        'entry':       'Entry (₹)',
+        'sl':          'SL (₹)',
+        'tp':          'TP (₹)',
+        'quantity':    'Qty',
+        'risk_amount': 'Risk (₹)',
+        'order_type':  'Order',
+        'exit_by':     'Exit By'
+    }
+    cols    = [c for c in ORB_COLS if c in all_df.columns]
+    display = all_df[cols].rename(
+        columns={c: ORB_COLS[c] for c in cols}
+    ).sort_values('Time', ascending=False).reset_index(drop=True)
+    st.dataframe(display, use_container_width=True, hide_index=True)
 
 # --- Main ---
 def main():
@@ -837,6 +891,10 @@ def main():
     # Row 5: Active trades
     render_active_trades(trades_df)
 
+    st.markdown("---")
+
+        # ORB Signals
+    render_orb_signals()
     st.markdown("---")
 
     # Row 6: Tabs
