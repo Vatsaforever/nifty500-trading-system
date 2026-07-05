@@ -21,6 +21,11 @@ from scripts.sheets.sheets_writer import (
     get_risk_amount, send_buy_notification,
     get_sheet_client
 )
+
+from scripts.utils.telegram_alerts import (
+    alert_entry_initial, alert_entry_updated,
+    alert_tp_hit, alert_sl_hit, alert_ema_exit
+)
 from scripts.live.kite_order_sync import sync_pending_trades
 from scripts.utils.config import WATCHLIST_DIR
 

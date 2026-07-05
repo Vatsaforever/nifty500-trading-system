@@ -173,24 +173,21 @@ def write_orb_signal(signal, sector=''):
 
 
 def send_orb_alert(signal):
-    """Sends WhatsApp alert for ORB signal."""
     try:
-        from scripts.utils.whatsapp_alerts import send_whatsapp
-        msg = (
-            f"🚀 *ORB SIGNAL — {signal['symbol']}*\n"
-            f"Entry:    ₹{signal['entry']} (MIS SL-M)\n"
-            f"Stop:     ₹{signal['sl']}\n"
-            f"Target:   ₹{signal['tp']} (1.5R)\n"
-            f"Qty:      {signal['quantity']} shares\n"
-            f"Range:    {signal['range_pct']}% | "
-            f"Gap: {signal['gap_pct']}%\n"
-            f"Exit by:  3:15 PM today\n"
-            f"Order:    MIS SL-M in Zerodha\n"
-            f"Time:     {datetime.now().strftime('%H:%M IST')}"
+        from scripts.utils.telegram_alerts import alert_orb_signal
+        alert_orb_signal(
+            symbol    = signal['symbol'],
+            entry     = signal['entry'],
+            sl        = signal['sl'],
+            tp        = signal['tp'],
+            qty       = signal['quantity'],
+            risk      = signal['risk_amount'],
+            or_high   = signal['or_high'],
+            or_low    = signal['or_low'],
+            range_pct = signal['range_pct']
         )
-        send_whatsapp(msg)
     except Exception as e:
-        print(f"  ⚠️ WhatsApp alert failed: {e}")
+        print(f"  ⚠️ Alert failed: {e}")
 
 
 def run_orb_scan():
