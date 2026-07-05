@@ -291,9 +291,12 @@ def run_pullback_forward_test(kite, imap):
                 df['ema9_x']  = ema(df['close'], EMA_EXIT_FAST)
                 df['ema21_x'] = ema(df['close'], EMA_EXIT_SLOW)
                 i = len(df) - 2
-                if (df['ema9_x'].iloc[i-1] >= df['ema21_x'].iloc[i-1]
-                        and df['ema9_x'].iloc[i] 
-                        df['ema21_x'].iloc[i]):
+                ema9_prev  = df['ema9_x'].iloc[i-1]
+                ema21_prev = df['ema21_x'].iloc[i-1]
+                ema9_curr  = df['ema9_x'].iloc[i]
+                ema21_curr = df['ema21_x'].iloc[i]
+                if (ema9_prev >= ema21_prev and
+                        ema9_curr < ema21_curr):
                     print(f"  ⚠️  [FT Pullback] EMA EXIT alert "
                           f"for {symbol} — consider closing")
 
