@@ -830,7 +830,7 @@ def render_orb_signals():
     ).sort_values('Time', ascending=False).reset_index(drop=True)
     st.dataframe(display, use_container_width=True, hide_index=True)
 
-   @st.cache_data(ttl=300)
+@st.cache_data(ttl=300)
 def load_stats_raw():
     try:
         ws = get_sheet_client("Stats")
