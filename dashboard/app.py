@@ -830,7 +830,17 @@ def render_orb_signals():
     ).sort_values('Time', ascending=False).reset_index(drop=True)
     st.dataframe(display, use_container_width=True, hide_index=True)
 
-    @st.cache_data(ttl=300)
+   @st.cache_data(ttl=300)
+def load_stats_raw():
+    try:
+        ws = get_sheet_client("Stats")
+        return ws.get_all_values()
+    except Exception as e:
+        st.error(f"Error loading Stats: {e}")
+        return []
+
+
+@st.cache_data(ttl=300)
 def load_ft_data():
     try:
         pb  = get_sheet_client("FT Pullback")
@@ -842,6 +852,7 @@ def load_ft_data():
             pd.DataFrame(sm.get_all_records())
         )
     except Exception:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
 
