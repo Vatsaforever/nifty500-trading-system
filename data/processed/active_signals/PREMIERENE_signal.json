@@ -1,0 +1,15 @@
+{
+  "symbol": "PREMIERENE",
+  "has_active_signal": true,
+  "entry_triggered": false,
+  "active_entry": 1050.92,
+  "active_sl": 1002.88,
+  "active_tp": 1122.98,
+  "active_high": 1040.9,
+  "active_low": 1012.9,
+  "active_atr": 10.02,
+  "active_quantity": 52,
+  "risk_amount": 2498.08,
+  "signal_time": "2026-07-07 09:15:00",
+  "last_updated_time": "2026-07-07 09:15:00"
+}

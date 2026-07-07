@@ -1,0 +1,24 @@
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax
+  File "C:\Users\svats\trading_project\scripts\live\forward_test.py", line 4
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')import sys
+                                                                      ^^^^^^
+SyntaxError: invalid syntax

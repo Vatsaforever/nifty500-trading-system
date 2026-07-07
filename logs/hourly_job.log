@@ -1,0 +1,50 @@
+
+============================================================
+HOURLY SCAN — 2026-07-07 10:46:02
+============================================================
+
+Syncing pending trades with Kite orders...
+  No pending trades to sync.
+
+  Loaded watchlist: data/processed/watchlist/watchlist_2026-07-06.csv
+Watchlist symbols: 3
+
+Risk amount per trade: ₹2,500.00
+
+[MMTC]
+  No signal.
+[PREMIERENE]
+  📋 [ENTRY_INITIAL] PREMIERENE written to Signals tab.
+  📋 ENTRY_INITIAL — Entry: ₹1050.92 | SL: ₹1002.88 | TP: ₹1122.98
+  👉 Place a SL-M BUY order in Zerodha for 52 shares of PREMIERENE with trigger price ₹1050.92
+[TITAGARH]
+  No signal.
+
+============================================================
+HOURLY SCAN COMPLETE
+============================================================
+
+
+============================================================
+HOURLY SCAN — 2026-07-07 10:54:32
+============================================================
+
+Syncing pending trades with Kite orders...
+  No pending trades to sync.
+
+  Loaded watchlist: data/processed/watchlist/watchlist_2026-07-06.csv
+Watchlist symbols: 3
+
+Risk amount per trade: ₹2,500.00
+
+[MMTC]
+  No signal.
+[PREMIERENE]
+  ⏳ Waiting — entry: ₹1050.92
+[TITAGARH]
+  No signal.
+
+============================================================
+HOURLY SCAN COMPLETE
+============================================================
+

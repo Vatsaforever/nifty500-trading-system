@@ -133,6 +133,19 @@ def run_hourly_scan():
                     create_initial_signal(symbol, signal)
                     signal["event_type"] = "ENTRY_INITIAL"
                     write_signal_event(signal, sector=sector)
+                    # Telegram alert
+                    try:
+                        from scripts.utils.telegram_alerts import alert_entry_initial
+                        alert_entry_initial(
+                            symbol = symbol,
+                            entry  = signal['entry'],
+                            sl     = signal['sl'],
+                            tp     = signal['tp'],
+                            qty    = signal['quantity'],
+                            risk   = signal['risk_amount']
+                        )
+                    except Exception as e:
+                        print(f"  ⚠️ Telegram alert failed: {e}")
                     print(f"  📋 ENTRY_INITIAL — "
                           f"Entry: ₹{signal['entry']} | "
                           f"SL: ₹{signal['sl']} | "
@@ -186,6 +199,20 @@ def run_hourly_scan():
                           f"New Entry: ₹{updated['active_entry']}\n"
                           f"  👉 Modify your Zerodha order trigger "
                           f"price to ₹{updated['active_entry']}")
+                    # Telegram alert
+                    try:
+                        from scripts.utils.telegram_alerts import alert_entry_updated
+                        alert_entry_updated(
+                            symbol    = symbol,
+                            old_entry = updated.get("_old_entry"),
+                            new_entry = updated["active_entry"],
+                            old_sl    = updated.get("_old_sl"),
+                            new_sl    = updated["active_sl"],
+                            new_tp    = updated["active_tp"],
+                            new_qty   = updated["active_quantity"]
+                        )
+                    except Exception as e:
+                        print(f"  ⚠️ Telegram alert failed: {e}")
                 else:
                     print(f"  ⏳ Waiting — "
                           f"entry: ₹{active['active_entry']}")
@@ -240,11 +267,42 @@ def run_hourly_scan():
 
             if event == "EMA_EXIT":
                 write_ema_exit_alert(symbol)
+                # Telegram alert
+                try:
+                    from scripts.utils.telegram_alerts import alert_ema_exit
+                    alert_ema_exit(
+                        symbol        = symbol,
+                        ema9          = details['ema9'],
+                        ema21         = details['ema21'],
+                        current_price = details['current_price']
+                    )
+                except Exception as e:
+                    print(f"  ⚠️ Telegram alert failed: {e}")
                 print(f"  ⚠️  EMA_EXIT alert — consider exiting.")
 
             elif event in ("TP_HIT", "SL_HIT"):
                 write_trade_exit(symbol, details)
                 clear_active_signal(symbol)
+                                # Telegram alert
+                try:
+                    from scripts.utils.telegram_alerts import (
+                        alert_tp_hit, alert_sl_hit
+                    )
+                    if event == "TP_HIT":
+                        alert_tp_hit(
+                            symbol     = symbol,
+                            exit_price = details['exit_price'],
+                            pnl        = details['pnl_rupees'],
+                            r_multiple = details['r_multiple']
+                        )
+                    else:
+                        alert_sl_hit(
+                            symbol     = symbol,
+                            exit_price = details['exit_price'],
+                            pnl        = details['pnl_rupees']
+                        )
+                except Exception as e:
+                    print(f"  ⚠️ Telegram alert failed: {e}")
                 icon = "✅" if event == "TP_HIT" else "❌"
                 print(f"  {icon} {event} — "
                       f"Exit: ₹{details['exit_price']} | "
