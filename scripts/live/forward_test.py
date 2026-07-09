@@ -2,6 +2,7 @@ import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+import sys
 import os
 import math
 import pandas as pd
@@ -481,15 +482,10 @@ def run_orb_forward_test(kite, imap):
     except Exception as e:
         print(f"  ⚠️ Could not check ORB open trades: {e}")
 
-    # Scan for new ORB signals (only in morning window)
-    is_morning = (now.hour == 9 and now.minute >= 30) or \
-                 (now.hour == 10 and now.minute <= 30)
-
-    if not is_morning:
-        print(f"  Outside ORB signal window "
-              f"(9:30-10:30 AM) — skipping new signal scan")
-        return
-
+  # New ORB signals are logged directly by run_orb_scan.py
+    # Forward test only handles exit monitoring here
+    print(f"  Checking ORB exit conditions only "
+          f"(new signals logged by ORB scanner)")
     print(f"  Scanning Nifty 50 for ORB signals...")
     for symbol in symbols:
         try:
